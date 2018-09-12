@@ -17,22 +17,25 @@
       "!**/_*/**",
       "!**/components/**"
     ],
-    "bundle": "**/main.js",
+    "bundle": [
+      "**/main.js",
+      "**/vendor.js"
+    ],
     "output": "public",
     "rename": [
       "**/assets/**:{fullpath/2}",
       "**/pages/**:{fullpath/3}"
     ],
-    "pluginOptions": {
-      "bower": {
-        "bundle": true
+    "bundleOptions": {
+      "rollup": {
+        "plugins": [
+          "rollup-plugin-node-resolve",
+          "rollup-plugin-commonjs"
+        ]
       }
     },
     "devPlugins": [
       "tarima-lr"
-    ],
-    "plugins": [
-      "tarima-bower"
     ]
   },
   "devDependencies": {
@@ -43,9 +46,11 @@
     "node-sass": "^4.9.3",
     "pug": "^2.0.0-beta6",
     "rollup": "^0.65.2",
+    "rollup-plugin-commonjs": "^9.1.6",
+    "rollup-plugin-node-resolve": "^3.4.0",
     "tarima": "^4.2.0",
-    "tarima-bower": "^0.4.3",
     "tarima-lr": "^0.4.1",
+    "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17"
   }
 }
