@@ -1,0 +1,6 @@
+*.log
+.tarima
+.DS_Store
+public
+node_modules
+bower_components
