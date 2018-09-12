@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    include ../partials/head
+  body
+    do(use='destFile' src='sprites.svg')
+
+    block body
+
+    do(use='image' src='12inches_small')
+    br
+    do(use='icon' src='sprites-flags-jm')
+    br
+    do(use='icon' src='sprites-flags-mx')
+
+    h3 Images
+
+    do(use='srcFile' src='src/resources/sprites/bug.svg')
+
+    div(style='width:50px')
+      do(use='svgi' src='sprites.svg#x-bug')
+
+    do(use='svg' src='construction')
+    do(use='svg' src='bullhorn')
+    do(use='svg' src='bug')
+    do(use='svg' src='earth')
+
+    nav
+      h3 Navigation
+      ul
+        li: a(href='/') Home
+
+    do(use='resources')
+
+    block scripts

@@ -1,0 +1,78 @@
+{
+  "name": "plate",
+  "version": "0.0.0",
+  "description": "Old boilerplate for web-pages!",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "url": "https://soypache.co",
+    "name": "Alvaro Cabrera",
+    "email": "pateketrueke@gmail.com"
+  },
+  "scripts": {
+    "dev": "tarima watch -d",
+    "dist": "tarima -qe $NODE_ENV",
+    "check": "eslint 'src/**/*.{js,pug}'",
+    "predist": "npm run check"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/tacoss/plate.git",
+    "issues": "https://github.com/tacoss/plate/issues"
+  },
+  "tarima": {
+    "from": "src",
+    "public": "build",
+    "copy": {
+      "public": "."
+    },
+    "filter": [
+      "!**/lib/**"
+    ],
+    "bundle": [
+      "**/index.js"
+    ],
+    "rename": [
+      "**/pages/!(index).html:{basedir}/{name}/index.html",
+      "**/{pages,resources}/**:{fullpath/1}",
+      "**/index.(css|js):{basedir}.{ext}",
+      "**:{fullpath/1}"
+    ],
+    "ignoreFiles": [
+      ".gitignore"
+    ],
+    "plugins": [
+      "talavera"
+    ],
+    "devPlugins": [
+      "tarima-lr"
+    ],
+    "bundleOptions": {
+      "extensions": {
+        "js": "es6",
+        "css": "less"
+      },
+      "less": {
+        "plugins": [
+          "less-plugin-autoprefix"
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "buble": "^0.19.6",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-pug": "^1.1.1",
+    "kramed": "^0.5.6",
+    "less": "^3.9.0",
+    "less-plugin-autoprefix": "^2.0.0",
+    "pug": "^2.0.0-beta11",
+    "rollup": "^1.1.2",
+    "talavera": "^0.7.4",
+    "tarima": "^4.4.4",
+    "tarima-lr": "^0.4.1"
+  }
+}
