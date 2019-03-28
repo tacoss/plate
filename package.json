@@ -22,15 +22,16 @@
       "public": "."
     },
     "filter": [
-      "!**/{lib,layouts,partials}/**"
+      "!**/lib/**"
     ],
     "bundle": [
-      "**/main.js"
+      "**/index.js"
     ],
     "rename": [
-      "**/!(index).html:{basedir}/{name}/index.html",
-      "**/[[:digit:]]/index.html:{basedir}.{ext}",
-      "**/{assets,pages}/**:{fullpath/2}"
+      "**/pages/!(index).html:{basedir}/{name}/index.html",
+      "**/{pages,resources}/**:{fullpath/1}",
+      "**/index.(css|js):{basedir}.{ext}",
+      "**:{fullpath/1}"
     ],
     "ignoreFiles": [
       ".gitignore"
