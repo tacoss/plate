@@ -3,9 +3,20 @@ html
   head
     include ../partials/head
   body
-    do(use='destFile' src='images/sprites.svg')
+    do(use='destFile' src='sprites.svg')
 
     block body
+
+    h3 Images
+    do(use='srcFile' src='src/resources/sprites/bug.svg')
+    do(use='svgi' src='sprites.svg#x-bug')
+    do(use='image' src='12inches_small')
+    do(use='icon' src='sprites-flags-jm')
+    do(use='icon' src='sprites-flags-mx')
+    do(use='svg' src='construction')
+    do(use='svg' src='bullhorn')
+    do(use='svg' src='bug')
+    do(use='svg' src='earth')
 
     nav
       h3 Navigation

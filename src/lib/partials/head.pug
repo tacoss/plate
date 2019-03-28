@@ -34,8 +34,7 @@ if pkg.author && pkg.profile === true
   meta(property='og:image' content=pkg.author.image)
 
 block styles
-  link(rel='stylesheet' type='text/css' href='images/images.css')
-  link(rel='stylesheet' type='text/css' href='styles/main.css')
+  do(use='includeTag' src=['images.css', 'styles.css', 'sprites/flags.css'])
 
 block meta
   if title
