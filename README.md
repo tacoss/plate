@@ -1,25 +1,26 @@
 
-# Static boilerplate
+# New boilerplate for web-pages!
 
-> All &mdash;non-quite-trendy&mdash; batteries Included!
+> All batteries included!
 
 - **ESLint** &mdash; to check your code
 - **Bublé** &mdash; to transpile your ES6
 - **Rollup.js** &mdash; to bundle everything
 - **Live Reload** &mdash; to quick reload on dev!
-- **Vue** template-compiler &amp; runtime
-- **SASS** for NodeJS &mdash; y'know ;-)
+- **LESS** for NodeJS &mdash; y'know ;-)
 - **Pug** for static pages (or JST)
 
 ## Installation
 
 ```bash
-$ npx degit tacoss/boilerplate my-project
+$ npx degit tacoss/plate website
 ```
 
 Or just clone/download this repository and follow the next steps:
 
 ## How it works?
+
+It includes a simplified `Makefile` for quick usage:
 
 - `make dev` to start the development server, it'll wait for your changes
 - `make dist` to build the final assets for production
