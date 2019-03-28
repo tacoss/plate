@@ -12,7 +12,7 @@ _lib=$(patsubst lib%,lib%,$*)
 _page=$(patsubst page%,pages%,$(_lib))
 _res=$(patsubst res%,resources%,$(_page))
 _src=$(subst @,,src/$(_res))
-_dir=$(patsubst %/,%,$(_src)/$(name))
+_dir=$(patsubst %/,%,$(_src)/$(NAME))
 _base=$(dir $(_dir))
 
 # directories
@@ -20,7 +20,7 @@ dirname=$(patsubst %/,%,$(_base))
 filepath=$(patsubst $(_base),,$(_dir))
 
 # targets
-.PHONY: help deps purge dev dist clean deploy has_body
+.PHONY: ? deps purge dev dist clean deploy has_body
 
 # utils
 define iif
@@ -28,9 +28,14 @@ define iif
 endef
 
 # display all targets-with-help in this file
-help: Makefile
+?: Makefile
 	@(figlet plate! 2> /dev/null) || printf "\n  Welcome to plate!\n  -- get http://www.figlet.org/ to see a nice banner ;-)\n\n"
 	@awk -F':.*?##' '/^[a-z\\%!:-]+:.*##/{gsub("%","*",$$1);gsub("\\\\",":*",$$1);printf "\033[36m%8s\033[0m %s\n",$$1,$$2}' $<
+	@printf "\n  Examples:"
+	@printf "\n    make add:page NAME=example.md BODY='# It works!'"
+	@printf "\n    make rm:Dockerfile"
+	@printf "\n    make clean dev"
+	@printf "\n\n"
 
 dev: deps ## Start development scripts
 	@npm run dev
@@ -51,7 +56,7 @@ deploy: $(src) ## Push built artifacts to github!
 deps: ## Check for installed dependencies
 	@(((ls node_modules | grep .) > /dev/null 2>&1) || npm i) || true
 
-purge: ## Remove all from node_modules/*
+purge: clean ## Remove all from node_modules/*
 	@printf "\r* Removing all dependencies... "
 	@rm -rf node_modules/.{bin,cache}
 	@rm -rf node_modules/*
@@ -60,7 +65,7 @@ purge: ## Remove all from node_modules/*
 add\:%: ## Create files, scripts or resources
 	@make -s has_body name_not_$*
 	@mkdir -p $(dirname)
-	@echo "$(body)" > $(PWD)/$(filepath)
+	@echo "$(BODY)" > $(PWD)/$(filepath)
 	@printf "\r* File $(filepath) was created\n"
 
 rm\:%: ## Remove **any** stuff from your workspace
@@ -70,10 +75,10 @@ rm\:%: ## Remove **any** stuff from your workspace
 
 # input validations
 has_body:
-ifeq ($(body),)
+ifeq ($(BODY),)
 	@echo "* Missing file contents, e.g. body=TEST" && exit 1
 endif
 
 name_not_%:
-	@((echo $* $(name) | grep -vE '^(lib|page|res)$$') > /dev/null 2>&1) \
+	@((echo $* $(NAME) | grep -vE '^(lib|page|res)$$') > /dev/null 2>&1) \
 		|| (echo "* Missing file path, e.g. name=TEST" && exit 1)
