@@ -1,5 +1,6 @@
-
 # New boilerplate for web-pages!
+
+![12in](src/resources/images/12inches_small.png)
 
 > All batteries included!
 
