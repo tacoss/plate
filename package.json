@@ -1,56 +1,70 @@
 {
-  "name": "static-boilerplate",
-  "description": "Static boilerplate",
-  "main": "dist/main.js",
+  "name": "your-website",
   "version": "0.0.0",
+  "description": "Useful for websites!",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "url": "https://soypache.co",
+    "name": "Alvaro Cabrera",
+    "email": "pateketrueke@gmail.com"
+  },
   "scripts": {
     "dev": "tarima watch -d",
-    "dist": "tarima -fqe production"
+    "dist": "tarima -qe $NODE_ENV",
+    "check": "eslint 'src/**/*.{js,pug}'"
   },
-  "author": "Alvaro Cabrera <pateketrueke@gmail.com>",
-  "license": "MIT",
   "tarima": {
     "from": "src",
+    "public": "build",
+    "copy": {
+      "public": "."
+    },
     "filter": [
-      "!_*",
-      "!**/_*",
-      "!**/_*/**",
-      "!**/components/**"
+      "!**/{lib,layouts,partials}/**"
     ],
     "bundle": [
-      "**/main.js",
-      "**/vendor.js"
+      "**/main.js"
     ],
-    "output": "public",
     "rename": [
-      "**/assets/**:{fullpath/2}",
-      "**/pages/**:{fullpath/3}"
+      "**/!(index).html:{basedir}/{name}/index.html",
+      "**/[[:digit:]]/index.html:{basedir}.{ext}",
+      "**/{assets,pages}/**:{fullpath/2}"
     ],
-    "bundleOptions": {
-      "rollup": {
-        "plugins": [
-          "rollup-plugin-node-resolve",
-          "rollup-plugin-commonjs"
-        ]
-      }
-    },
+    "ignoreFiles": [
+      ".gitignore"
+    ],
+    "plugins": [
+      "talavera"
+    ],
     "devPlugins": [
       "tarima-lr"
-    ]
+    ],
+    "bundleOptions": {
+      "extensions": {
+        "js": "es6",
+        "css": "less"
+      },
+      "less": {
+        "plugins": [
+          "less-plugin-autoprefix"
+        ]
+      }
+    }
   },
   "devDependencies": {
-    "buble": "^0.19.3",
-    "eslint": "^4.13.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "node-sass": "^4.9.3",
-    "pug": "^2.0.0-beta6",
-    "rollup": "^0.65.2",
-    "rollup-plugin-commonjs": "^9.1.6",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "tarima": "^4.2.0",
-    "tarima-lr": "^0.4.1",
-    "vue": "^2.5.17",
-    "vue-template-compiler": "^2.5.17"
+    "buble": "^0.19.6",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-pug": "^1.1.1",
+    "less": "^3.9.0",
+    "less-plugin-autoprefix": "^2.0.0",
+    "pug": "^2.0.0-beta11",
+    "rollup": "^1.1.2",
+    "talavera": "^0.7.1",
+    "tarima": "^4.4.3",
+    "tarima-lr": "^0.4.1"
   }
 }

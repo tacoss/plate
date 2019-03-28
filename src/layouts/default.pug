@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    include ../partials/head
+  body
+    do(use='destFile' src='images/sprites.svg')
+
+    block body
+
+    nav
+      h3 Navigation
+      ul
+        li: a(href='/') Home
+
+    do(use='resources')
+
+    block scripts
