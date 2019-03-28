@@ -29,6 +29,7 @@ endef
 
 # display all targets-with-help in this file
 help: Makefile
+	@(figlet plate! 2> /dev/null) || printf "\n  Welcome to plate!\n  -- get http://www.figlet.org/ to see a nice banner ;-)\n\n"
 	@awk -F':.*?##' '/^[a-z\\%!:-]+:.*##/{gsub("%","*",$$1);gsub("\\\\",":*",$$1);printf "\033[36m%8s\033[0m %s\n",$$1,$$2}' $<
 
 dev: deps ## Start development scripts
