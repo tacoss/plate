@@ -2,7 +2,7 @@
 
 ![12in](src/resources/images/12inches_small.png)
 
-> All batteries included!
+> Pure hits &amp; good music for your ears.
 
 - **ESLint** &mdash; to check your code
 - **Bublé** &mdash; to transpile your ES6
@@ -17,19 +17,25 @@
 $ npx degit tacoss/plate website
 ```
 
-Or just clone/download this repository and follow the next steps:
+Once done just move inside with `cd website` and continue reading.
 
 ## How it works?
 
 It includes a simplified `Makefile` for quick usage:
 
-- `make dev` to start the development server, it'll wait for your changes
+- `make dev` to start the development server, it'll wait for you!
 - `make dist` to build the final assets for production
 - `make clean` to remove all generated files
 
-All sources starting with `_` are be skipped from processing, remaining ones are compiled based on their extension, e.g. `src/content/pages/example.js.pug` will produce a client-function from Pug compiler.
+Type `make` without arguments to display usage info.
 
-Read the [tarima docs](https://github.com/tacoss/tarima#tarima).
+> Read the [tarima docs](https://github.com/tacoss/tarima#tarima) to know more about the tooling used.
+
+Deployment is designed to go through GitHub pages, so `make deploy` would do all the required job for you.
+
+> If something gets wrong try `make clean dist` before deploying.
+
+Files found at `./build` are ready to be served.
 
 ## Why not something else?
 
