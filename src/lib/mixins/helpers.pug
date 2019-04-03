@@ -1,0 +1,7 @@
+mixin linkFor(path, title)
+  a(href=(ROOT || '') + path)&attributes(attributes) #{title}
+    if block
+      block
+
+mixin baseTag
+  base(href=(ROOT || '') + '/')
