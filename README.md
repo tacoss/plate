@@ -10,6 +10,8 @@
 - **Live Reload** &mdash; to quick reload on dev!
 - **LESS** & **Pug** for other assets &mdash; y'know ;-)
 
+Also, it enables advanced images-to-sprite output through [talavera](https://github.com/pateketrueke/talavera).
+
 ## Installation
 
 ```bash
@@ -41,6 +43,6 @@ Files found at `./build` are ready to be served.
 
 I tried (several times) to setup all goods from this repository: deps, pages, assets, etc. with Webpack, Rollup.js or even Parcel without any success yet.
 
-So, that's why I maintain stuff like this.
+So, that's why I created this starter.
 
 Enjoy!
