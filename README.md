@@ -14,7 +14,7 @@
 ## Installation
 
 ```bash
-$ npx degit tacoss/plate website
+$ npx haki tacoss/plate website
 ```
 
 Once done just move inside with `cd website` and continue reading.
