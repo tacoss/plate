@@ -8,8 +8,7 @@
 - **Bublé** &mdash; to transpile your ES6
 - **Rollup.js** &mdash; to bundle everything
 - **Live Reload** &mdash; to quick reload on dev!
-- **LESS** for NodeJS &mdash; y'know ;-)
-- **Pug** for static pages (or JST)
+- **LESS** & **Pug** for other assets &mdash; y'know ;-)
 
 ## Installation
 
