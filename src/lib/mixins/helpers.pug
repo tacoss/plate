@@ -1,5 +1,8 @@
-mixin linkFor(path, title)
-  a(href=(ROOT || '') + path)&attributes(attributes) #{title}
+mixin linkFor(path, title, external)
+  - var target = external ? '_blank' : undefined;
+  - var href = path.indexOf('://') === -1 ? `${ROOT || ''}${path}` : path;
+
+  a(target=target href=href)&attributes(attributes) #{title}
     if block
       block
 
