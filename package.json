@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "tarima watch -d",
-    "dist": "tarima -qe $NODE_ENV",
+    "dist": "tarima -oqe $NODE_ENV",
     "check": "eslint 'src/**/*.{js,pug}'",
     "predist": "npm run check"
   },
