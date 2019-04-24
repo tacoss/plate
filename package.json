@@ -34,10 +34,14 @@
       "**/index.js"
     ],
     "rename": [
-      "**/pages/!(index).html:{basedir}/{name}/index.html",
+      "**/pages/**/!(index).html:{basedir}/{name}/index.html",
       "**/{pages,resources}/**:{fullpath/1}",
       "**/index.(css|js):{basedir}.{ext}",
       "**:{fullpath/1}"
+    ],
+    "watching": [
+      ".env",
+      "package.json"
     ],
     "ignoreFiles": [
       ".gitignore"
@@ -53,6 +57,9 @@
         "js": "es6",
         "css": "less"
       },
+      "kramed": {
+        "highlight": true
+      },
       "less": {
         "plugins": [
           "less-plugin-autoprefix"
@@ -66,6 +73,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-pug": "^1.1.1",
+    "highlight.js": "^9.15.6",
     "kramed": "^0.5.6",
     "less": "^3.9.0",
     "less-plugin-autoprefix": "^2.0.0",
