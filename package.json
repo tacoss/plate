@@ -11,6 +11,8 @@
     "email": "pateketrueke@gmail.com"
   },
   "scripts": {
+    "now-build": "npm run dist",
+    "now-dev": "npm run dev",
     "dev": "tarima watch -d",
     "dist": "tarima -mqe $NODE_ENV",
     "check": "eslint 'src/**/*.{js,pug}'",

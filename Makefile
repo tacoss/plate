@@ -23,7 +23,7 @@ NODE_ENV := development
 export NODE_ENV
 
 # targets
-.PHONY: ? deps purge dev dist clean deploy has_body
+.PHONY: ? dev test dist clean deploy deps purge has_body
 
 # utils
 define iif
