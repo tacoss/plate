@@ -2,7 +2,7 @@
   "name": "plate",
   "version": "0.0.0",
   "description": "Old boilerplate for web-pages!",
-  "main": "dist/main.js",
+  "main": "build/index.html",
   "license": "MIT",
   "private": true,
   "author": {
