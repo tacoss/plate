@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  background-color: transparent;
+  transition: background-color .2s;
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  min-width: 20em;
+}
+
+label {
+  position: relative;
+  display: block;
+
+  input {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.loading,
+[disabled] {
+  opacity: .5;
+  pointer-events: none;
+}

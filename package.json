@@ -30,20 +30,17 @@
       "public": "."
     },
     "filter": [
-      "!**/lib/**"
+      "!**/{lib,shared,components}/**"
     ],
     "bundle": [
-      "**/index.js"
+      "**/{main,index}.js"
     ],
     "rename": [
       "**/pages/**/!(index).html:{basedir}/{name}/index.html",
       "**/{pages,resources}/**:{fullpath/1}",
       "**/index.(css|js):{basedir}.{ext}",
+      "**/app/**:{fullpath/1}",
       "**:{fullpath/1}"
-    ],
-    "watching": [
-      ".env",
-      "package.json"
     ],
     "ignoreFiles": [
       ".gitignore"
@@ -57,10 +54,34 @@
     "bundleOptions": {
       "extensions": {
         "js": "es6",
-        "css": "less"
+        "css": "less",
+        "gql": "json"
+      },
+      "rollup": {
+        "context": "window",
+        "plugins": {
+          "rollup-plugin-node-resolve": {
+            "mainFields": [
+              "module",
+              "main"
+            ]
+          },
+          "rollup-plugin-commonjs": {
+            "extensions": [
+              ".js",
+              ".svelte"
+            ]
+          }
+        },
+        "globals": {
+          "node-fetch": "fetch"
+        }
       },
       "kramed": {
         "highlight": true
+      },
+      "buble": {
+        "objectAssign": "Object.assign"
       },
       "less": {
         "plugins": [
@@ -75,15 +96,20 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-pug": "^1.1.1",
+    "fetchql": "^3.0.0",
     "highlight.js": "^9.15.6",
     "kramed": "^0.5.6",
     "less": "^3.9.0",
     "less-plugin-autoprefix": "^2.0.0",
     "pug": "^2.0.0-beta11",
     "rollup": "^1.1.2",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "svelte": "^3.3.0",
+    "svero": "^0.5.0",
     "talavera": "^0.7.4",
-    "tarima": "^4.4.4",
-    "tarima-lr": "^0.4.1",
+    "tarima": "^4.4.7",
+    "tarima-lr": "^0.5.0",
     "terser": "^3.17.0"
   }
 }
