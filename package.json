@@ -2,7 +2,7 @@
   "name": "plate",
   "version": "0.0.0",
   "description": "Old boilerplate for web-pages!",
-  "main": "build/index.html",
+  "main": "build/main.js",
   "license": "MIT",
   "private": true,
   "author": {
@@ -62,7 +62,6 @@
         "plugins": {
           "rollup-plugin-node-resolve": {
             "mainFields": [
-              "module",
               "main"
             ]
           },
@@ -72,9 +71,6 @@
               ".svelte"
             ]
           }
-        },
-        "globals": {
-          "node-fetch": "fetch"
         }
       },
       "kramed": {
@@ -96,7 +92,6 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-pug": "^1.1.1",
-    "fetchql": "^3.0.0",
     "highlight.js": "^9.15.6",
     "kramed": "^0.5.6",
     "less": "^3.9.0",
