@@ -7,15 +7,13 @@ html.no-js(lang='en')
   body
     do(use='destFile' src='sprites.svg')
 
+    block body
+
     #app
     script(src='main.js')
 
-    block body
-
     do(use='image' src='12inches_small')
-    br
     do(use='icon' src='sprites-flags-jm')
-    br
     do(use='icon' src='sprites-flags-mx')
 
     h3 Images
@@ -29,11 +27,6 @@ html.no-js(lang='en')
     do(use='svg' src='bullhorn')
     do(use='svg' src='bug')
     do(use='svg' src='earth')
-
-    nav
-      h3 Navigation
-      ul
-        li: +linkFor('/', 'Home')
 
     do(use='resources')
 
