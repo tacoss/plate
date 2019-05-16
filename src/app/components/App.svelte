@@ -10,6 +10,7 @@
     <ul>
       <li>
         <Link href="/">Home</Link>
+        <Link href="/not-found">ERR</Link>
       </li>
     </ul>
   </nav>
