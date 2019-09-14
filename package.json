@@ -82,7 +82,7 @@
     "buble": "^0.19.6",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-pug": "^1.1.1",
     "eslint-plugin-svelte3": "^2.7.3",
     "highlight.js": "^9.15.6",

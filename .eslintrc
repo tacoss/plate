@@ -5,6 +5,7 @@
   },
   "extends": "airbnb-base",
   "plugins": [
+    "pug",
     "svelte3"
   ],
   "parserOptions": {
