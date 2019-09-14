@@ -17,10 +17,11 @@ dirname=$(patsubst %/,%,$(_base))
 filepath=$(patsubst $(_base),,$(_dir))
 
 # environment vars
+GIT_REVISION := $(shell git rev-parse --short=7 HEAD)
 NODE_ENV := development
 
 # export vars
-export NODE_ENV
+export NODE_ENV GIT_REVISION
 
 # targets
 .PHONY: ? dev test dist clean deploy deps purge has_body

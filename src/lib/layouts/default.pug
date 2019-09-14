@@ -6,6 +6,8 @@ html.no-js(lang='en')
     include ../partials/head
   body
 
+    small= `${pkg.name} v${pkg.version} (${GIT_REVISION})`
+
     block body
 
     do(use='destFile' src='sprites.svg')
