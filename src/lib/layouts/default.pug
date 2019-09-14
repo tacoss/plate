@@ -5,8 +5,7 @@ html.no-js(lang='en')
   head
     include ../partials/head
   body
-
-    small= `${pkg.name} v${pkg.version} (${GIT_REVISION})`
+    != `<!-- ${pkg.name} v${pkg.version} (${GIT_REVISION}) -->`
 
     block body
 
