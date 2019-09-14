@@ -15,7 +15,7 @@
     </ul>
   </nav>
   <main>
-    <Route path="*" component={NotFound} />
-    <Route path="/" component={Home} />
+    <Route fallback path="*" component={NotFound} />
+    <Route exact path="/" component={Home} />
   </main>
 </Router>

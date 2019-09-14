@@ -59,19 +59,11 @@
       },
       "rollup": {
         "context": "window",
-        "plugins": {
-          "rollup-plugin-node-resolve": {
-            "mainFields": [
-              "main"
-            ]
-          },
-          "rollup-plugin-commonjs": {
-            "extensions": [
-              ".js",
-              ".svelte"
-            ]
-          }
-        }
+        "plugins": [
+          "rollup-plugin-svelte",
+          "rollup-plugin-node-resolve",
+          "rollup-plugin-commonjs"
+        ]
       },
       "kramed": {
         "highlight": true
@@ -88,8 +80,8 @@
   },
   "devDependencies": {
     "buble": "^0.19.6",
-    "eslint": "^5.12.1",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-pug": "^1.1.1",
     "highlight.js": "^9.15.6",
@@ -97,14 +89,15 @@
     "less": "^3.9.0",
     "less-plugin-autoprefix": "^2.0.0",
     "pug": "^2.0.0-beta11",
-    "rollup": "^1.1.2",
-    "rollup-plugin-commonjs": "^9.3.4",
-    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup": "^1.21.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.0",
     "svelte": "^3.3.0",
-    "svero": "^0.5.0",
+    "svero": "^1.0.0",
     "talavera": "^0.7.4",
-    "tarima": "^4.4.7",
+    "tarima": "^4.5.3",
     "tarima-lr": "^0.5.0",
-    "terser": "^3.17.0"
+    "terser": "^4.3.1"
   }
 }

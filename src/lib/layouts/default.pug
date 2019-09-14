@@ -5,18 +5,13 @@ html.no-js(lang='en')
   head
     include ../partials/head
   body
-    do(use='destFile' src='sprites.svg')
 
     block body
 
-    #app
-    script(src='main.js')
-
+    do(use='destFile' src='sprites.svg')
     do(use='image' src='12inches_small')
     do(use='icon' src='sprites-flags-jm')
     do(use='icon' src='sprites-flags-mx')
-
-    h3 Images
 
     do(use='srcFile' src='src/resources/sprites/bug.svg')
 
