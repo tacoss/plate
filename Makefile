@@ -65,6 +65,13 @@ deploy: $(src) ## Push built artifacts to github!
 	#
 	@(mv .backup $(src) > /dev/null 2>&1) || true
 
+sync: $(src) ## Backup and deploy built files
+	@(mv .tarima .tarima.backup) || true
+	@(mv $(src) .backup > /dev/null 2>&1) || true
+	@make -s dist deploy
+	@(mv .tarima.backup .tarima) || true
+	@(rm -r $(src) && mv .backup $(src) > /dev/null 2>&1) || true
+
 deps: ## Check for installed dependencies
 	@(((ls node_modules | grep .) > /dev/null 2>&1) || npm i) || true
 
