@@ -47,19 +47,23 @@ dev: deps ## Start development scripts
 test: ## Lint to reduce mistakes and smells
 	@npm run check
 
-dist: deps ## Build artifact for production
-	@(git worktree remove $(src) --force > /dev/null 2>&1) || true
-	@git worktree add $(src) $(target)
-	@cd $(src) && rm -rf *
-	@npm run dist
-
 clean: ## Remove cache and generated artifacts
 	@$(call iif,rm -r $(src),Built artifacts were deleted,Artifacts already deleted)
 	@$(call iif,unlink .tarima,Cache file was deleted,Cache file already deleted)
 
 deploy: $(src) ## Push built artifacts to github!
+	@(mv $(src) .backup > /dev/null 2>&1) || true
+	#
+	@(git worktree remove $(src) --force > /dev/null 2>&1) || true
+	@git worktree add $(src) $(target)
+	@cd $(src) && rm -rf *
+	@npm run dist
+	#
 	@cd $(src) && git add . && git commit -m "$(message)"
 	@git push origin $(target) -f
+	@make -c restore
+	#
+	@(mv .backup $(src) > /dev/null 2>&1) || true
 
 deps: ## Check for installed dependencies
 	@(((ls node_modules | grep .) > /dev/null 2>&1) || npm i) || true
