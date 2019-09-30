@@ -5,26 +5,26 @@ html.no-js(lang='en')
   head
     include ../partials/head
   body
-
     != `<!-- ${pkg.name} v${pkg.version} (${GIT_REVISION}) -->`
 
     block body
 
-    do(use='destFile' src='sprites.svg')
     do(use='image' src='12inches_small')
-    do(use='icon' src='sprites-flags-jm')
-    do(use='icon' src='sprites-flags-mx')
 
-    do(use='srcFile' src='src/resources/sprites/bug.svg')
+    //- do(use='destFile' src='sprites.svg')
+    //- do(use='icon' src='sprites-flags-jm')
+    //- do(use='icon' src='sprites-flags-mx')
 
-    div(style='width:50px')
-      do(use='svgi' src='sprites.svg#x-bug')
+    //- do(use='srcFile' src='src/resources/sprites/bug.svg')
 
-    do(use='svg' src='construction')
-    do(use='svg' src='bullhorn')
-    do(use='svg' src='bug')
-    do(use='svg' src='earth')
+    //- div(style='width:50px')
+    //-   do(use='svgi' src='sprites.svg#x-bug')
 
-    do(use='resources')
+    //- do(use='svg' src='construction')
+    //- do(use='svg' src='bullhorn')
+    //- do(use='svg' src='bug')
+    //- do(use='svg' src='earth')
+
+    //- do(use='resources')
 
     block scripts
