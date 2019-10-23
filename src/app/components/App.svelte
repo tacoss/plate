@@ -1,5 +1,5 @@
 <script>
-  import { Router, Route, Link } from 'svero';
+  import { Router, Route, Link } from 'yrv';
 
   import NotFound from './pages/NotFound.svelte';
   import Home from './pages/Home.svelte';
@@ -15,7 +15,7 @@
     </ul>
   </nav>
   <main>
-    <Route fallback path="*" component={NotFound} />
     <Route exact path="/" component={Home} />
+    <Route fallback component={NotFound} />
   </main>
 </Router>

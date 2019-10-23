@@ -4,6 +4,8 @@ doctype html
 html.no-js(lang='en')
   head
     include ../partials/head
+    style.
+      a[aria-current=page]{color:red}
   body
     != `<!-- ${pkg.name} v${pkg.version} (${GIT_REVISION}) -->`
 
