@@ -100,7 +100,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "svelte": "^3.3.0",
     "svql": "0.0.5",
-    "talavera": "^0.7.4",
+    "talavera": "^0.7.7",
     "tarima": "^4.6.0",
     "terser": "^4.3.1",
     "yrv": "0.0.6"

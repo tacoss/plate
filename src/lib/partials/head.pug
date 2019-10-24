@@ -1,5 +1,3 @@
-+baseTag
-
 meta(lang='en')
 meta(charset='utf-8')
 meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
@@ -17,7 +15,7 @@ if pkg.description
   meta(name='description' content=pkg.description)
   meta(property='og:description' content=pkg.description)
 
-if pkg.author && pkg.profile === true
+if pkg.author && pkg.showProfile === true
   meta(name='author' content=pkg.author.name)
   meta(property='og:type' content='profile')
 
@@ -28,14 +26,11 @@ if pkg.author && pkg.profile === true
   if pkg.author.email
     meta(property='og:profile:username' content=pkg.author.email.split('@')[0])
 
-  if pkg.author.gender
-    meta(property='og:profile:gender' content=pkg.author.gender)
-
   meta(property='og:url' content=pkg.author.url)
   meta(property='og:image' content=pkg.author.image)
 
 block styles
-  do(use='includeTag' src=['images.css', 'styles.css', 'sprites/flags.css'])
+  do(use='includeTag' src=['images.css', 'styles.css', 'sprites/emojis.css'])
 
 block meta
   if title

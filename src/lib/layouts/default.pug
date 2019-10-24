@@ -3,11 +3,14 @@ include ../mixins/helpers
 doctype html
 html.no-js(lang='en')
   head
+    +baseTag
+
     include ../partials/head
-    style.
-      a[aria-current=page]{color:red}
+
+    meta(name='package' content=`${pkg.name} v${pkg.version}`)
+    meta(name='revision' content=GIT_REVISION)
+
   body
-    != `<!-- ${pkg.name} v${pkg.version} (${GIT_REVISION}) -->`
 
     block body
 
@@ -27,6 +30,6 @@ html.no-js(lang='en')
     //- do(use='svg' src='bug')
     //- do(use='svg' src='earth')
 
-    //- do(use='resources')
+    do(use='resources')
 
     block scripts
