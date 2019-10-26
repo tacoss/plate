@@ -5,14 +5,12 @@
   import Home from './pages/Home.svelte';
 </script>
 
-<Router>
+<Router path="/admin">
   <nav>
-    <ul>
-      <li>
-        <Link href="/">Home</Link>
-        <Link href="/not-found">ERR</Link>
-      </li>
-    </ul>
+    <nav>
+      <Link exact href="/admin/">Dashboard</Link>
+      | <Link exact href="/admin/not-found">Page not found</Link>
+    </nav>
   </nav>
   <main>
     <Route exact path="/" component={Home} />

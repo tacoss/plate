@@ -12,25 +12,8 @@ html.no-js(lang='en')
 
   body
 
+    nav #[+linkFor('/', 'Home')] | #[+linkFor('/demo', 'Demo')] | #[+linkFor('/admin', 'Admin')]
+
     block body
-
-    sprite(src='emojis/pkg' title="La bomba!")
-    sprite(src='emojis/bomb')
-    image(src='12inches_small' title="OSOMS")
-    icon(src='sprites/emojis/pkg')
-
-    destFile(src='sprites.svg')
-
-    srcFile(src='src/resources/sprites/bug.svg')
-
-    div(style='width:50px')
-      svgInline(src='sprites.svg#x-bug')
-
-    svgIcon(src='construction')
-    svgIcon(src='bullhorn')
-    svgIcon(src='bug')
-    svgIcon(src='earth')
-
-    resources
 
     block scripts

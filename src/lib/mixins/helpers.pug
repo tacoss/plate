@@ -1,10 +1,18 @@
+- var segment = self && self.parent.split('/').slice(2).join('/').replace(/\.\w+$/, '')
+- var url = `/${segment === 'index' ? '' : segment || ''}`;
+
 mixin linkFor(path, title, external)
   - var target = external ? '_blank' : undefined;
   - var href = path.indexOf('://') === -1 ? `${ROOT || ''}${path}` : path;
 
-  a(target=target href=href)&attributes(attributes) #{title}
-    if block
-      block
+  if path === url
+    a(target=target aria-current='page' href=href)&attributes(attributes) #{title}
+      if block
+        block
+  else
+    a(target=target href=href)&attributes(attributes) #{title}
+      if block
+        block
 
 mixin baseTag
   base(href=(ROOT || '') + '/')

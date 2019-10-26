@@ -1,0 +1,75 @@
+extends ../lib/layouts/default
+
+block head
+  title Demo page
+
+block body
+  fieldset
+    legend Sprites
+
+    p Example:
+    pre.
+      &lt;sprite src="emojis/pkg" /&gt;
+      &lt;sprite src="emojis/bomb" title="La bomba!" /&gt;
+
+    p Result:
+    sprite(src='emojis/pkg')
+    sprite(src='emojis/bomb' title='La bomba!')
+
+  fieldset
+    legend Images
+
+    p Example:
+    pre.
+      &lt;image src="12inches_small" title="OSOMS" /&gt;
+
+    p Result:
+    image(src='12inches_small' title='OSOMS')
+
+  fieldset
+    legend Icons
+
+    p Example:
+    pre.
+      &lt;icon src="sprites/emojis/pkg" /&gt;
+
+    p Result:
+    icon(src='sprites/emojis/pkg')
+
+  fieldset
+    legend Static includes
+
+    p Example:
+    pre.
+      &lt;srcFile src="src/resources/sprites/bug.svg" /&gt;
+
+    p Result:
+    srcFile(src='src/resources/sprites/bug.svg')
+
+  fieldset
+    legend SVG (inline)
+
+    p Example:
+    pre.
+      &lt;svgInline src="sprites.svg#x-bug" width="20" /&gt;
+
+    p Result:
+    svgInline(src='sprites.svg#x-bug' width=20)
+
+  fieldset
+    legend SVG (icons)
+
+    p Example:
+    pre.
+      &lt;destFile src="sprites.svg" /&gt;
+      &lt;svgIcon src="construction" width="20" height="20" /&gt;
+      &lt;svgIcon src="bullhorn" width="20" height="20" /&gt;
+      &lt;svgIcon src="bug" width="20" height="20" /&gt;
+
+    p Result:
+    destFile(src='sprites.svg')
+    svgIcon(src='construction' width=20 height=20)
+    svgIcon(src='bullhorn' width=20 height=20)
+    svgIcon(src='bug' width=20 height=20)
+
+  resources
