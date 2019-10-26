@@ -1,5 +1,6 @@
 [class^="x-"], [class*=" x-"] {
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 i[class^="x-"], i[class*=" x-"] {
