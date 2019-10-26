@@ -30,7 +30,7 @@ if pkg.author && pkg.showProfile === true
   meta(property='og:image' content=pkg.author.image)
 
 block styles
-  do(use='includeTag' src=['images.css', 'styles.css', 'sprites/emojis.css'])
+  includeTag(src='images.css styles.css sprites/emojis.css')
 
 block meta
   if title

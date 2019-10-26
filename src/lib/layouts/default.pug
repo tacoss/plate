@@ -14,24 +14,23 @@ html.no-js(lang='en')
 
     block body
 
-    do(use='image' src='12inches_small')
-    do(use='sprite' src='sprites-emojis-pkg')
-    //- do(use='sprite' src=['sprites-emojis', 'bomb'])
+    sprite(src='emojis/pkg')
+    sprite(src='emojis/bomb')
+    image(src='12inches_small')
+    icon(src='sprites/emojis/pkg')
 
-    //- do(use='destFile' src='sprites.svg')
-    //- do(use='icon' src='sprites-flags-jm')
-    //- do(use='icon' src='sprites-flags-mx')
+    destFile(src='sprites.svg')
 
-    //- do(use='srcFile' src='src/resources/sprites/bug.svg')
+    srcFile(src='src/resources/sprites/bug.svg')
 
-    //- div(style='width:50px')
-    //-   do(use='svgi' src='sprites.svg#x-bug')
+    div(style='width:50px')
+      svgInline(src='sprites.svg#x-bug')
 
-    //- do(use='svg' src='construction')
-    //- do(use='svg' src='bullhorn')
-    //- do(use='svg' src='bug')
-    //- do(use='svg' src='earth')
+    svgIcon(src='construction')
+    svgIcon(src='bullhorn')
+    svgIcon(src='bug')
+    svgIcon(src='earth')
 
-    do(use='resources')
+    resources
 
     block scripts
