@@ -53,27 +53,21 @@ clean: ## Remove cache and generated artifacts
 
 deploy: $(src) ## Push built artifacts to github!
 	@(mv $(src) .backup > /dev/null 2>&1) || true
-	#
 	@(git worktree remove $(src) --force > /dev/null 2>&1) || true
 	@git worktree add $(src) $(target)
-	@cd $(src) && rm -rf *
-	@npm run dist
-	#
-	@cd $(src) && git add . && git commit -m "$(message)"
-	@git push origin $(target) -f
-	@make -c restore
-	#
+	@cp -r .backup/* $(src)
+	@cd $(src) && git add . && git commit -m "$(message)" || true
+	@git push origin $(target) -f || true
 	@(mv .backup $(src) > /dev/null 2>&1) || true
-
-sync: $(src) ## Backup and deploy built files
-	@(mv .tarima .tarima.backup) || true
-	@(mv $(src) .backup > /dev/null 2>&1) || true
-	@make -s dist deploy
-	@(mv .tarima.backup .tarima) || true
-	@(rm -r $(src) && mv .backup $(src) > /dev/null 2>&1) || true
 
 deps: ## Check for installed dependencies
 	@(((ls node_modules | grep .) > /dev/null 2>&1) || npm i) || true
+
+dist:  ## Compile sources for production
+	@npm run dist -- -f
+
+build:
+	@make -s dist
 
 purge: clean ## Remove all from node_modules/*
 	@printf "\r* Removing all dependencies... "
