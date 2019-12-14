@@ -13,6 +13,7 @@
   "scripts": {
     "now-build": "npm run dist",
     "now-dev": "npm run dev",
+    "start": "npm run dev",
     "dev": "tarima watch -d",
     "dist": "tarima -mqe $NODE_ENV",
     "check": "eslint 'src/**/*.{js,pug}'",
@@ -47,9 +48,6 @@
     ],
     "plugins": [
       "talavera"
-    ],
-    "devPlugins": [
-      "tarima-lr"
     ],
     "bundleOptions": {
       "extensions": {
