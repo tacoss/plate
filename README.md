@@ -1,6 +1,6 @@
 # Old boilerplate for web-pages!
 
-![12in](src/resources/images/12inches_small.png)
+![12in](https://dub-plate.glitch.me/images/12inches_small.png)
 
 > Pure hits &amp; good music for your ears.
 
@@ -19,6 +19,8 @@ $ npx haki tacoss/plate website
 ```
 
 Once done just move inside with `cd website` and continue reading.
+
+> Are you coming from glitch.com? Try editing the files inside the `src` directory on the left and see what happens!
 
 ## How it works?
 
