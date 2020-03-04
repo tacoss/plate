@@ -3,6 +3,8 @@
 ![12in](https://dub-plate.glitch.me/images/12inches_small.png)
 
 > Pure hits &amp; good music for your ears.
+>
+> [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/dubplate)
 
 - **ESLint** &mdash; to check your code
 - **Bublé** &mdash; to transpile your ES6
