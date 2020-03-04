@@ -1,6 +1,6 @@
 # Old boilerplate for web-pages!
 
-![12in](https://dub-plate.glitch.me/images/12inches_small.png)
+![12in](https://github.com/tacoss/plate/raw/master/src/resources/images/12inches_small.png)
 
 > Pure hits &amp; good music for your ears.
 >
