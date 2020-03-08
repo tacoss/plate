@@ -92,15 +92,14 @@
     "lodash": ">=4.17.13",
     "lodash.template": ">=4.5.0",
     "pug": "^2.0.0-beta11",
-    "rollup": "^1.21.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.0",
     "svelte": "^3.3.0",
-    "svql": "^0.0.26",
+    "svql": "0.0.27",
     "talavera": "^0.8.0",
-    "tarima": "^4.6.5",
+    "tarima": "^4.7.2",
     "terser": "^4.3.1",
-    "yrv": "^0.0.21"
+    "yrv": "0.0.25"
   }
 }
