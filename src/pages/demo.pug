@@ -73,12 +73,15 @@ block body
     svgIcon(src='bug' width=20 height=20)
 
   fieldset
-    legend Dynammic icons
+    legend Dynamic icons
 
     p Example:
     pre.
       +iconImage('bug')
 
+    p Result:
     +iconImage('bug')
+
+    p It renders an inline-svg during development, on production it uses a svg-sprite instead.
 
   resources
