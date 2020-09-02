@@ -9,7 +9,8 @@ jobs:
   glitch:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync to Glitch project
+      -
+        name: Sync to Glitch project
         uses: kanadgupta/glitch-sync@master
         with:
           project-id: '${{ secrets.projectId }}'
@@ -22,13 +23,9 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -
-        name: Build assets for production
+        name: Build & deploy to github
         run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git fetch origin gh-pages
-          make dist pages
-      - name: Push changes back to github
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          force: true
+          make deploy

@@ -51,7 +51,7 @@ clean: ## Remove cache and generated artifacts
 	@$(call iif,rm -r $(src),Built artifacts were deleted,Artifacts already deleted)
 	@$(call iif,unlink .tarima,Cache file was deleted,Cache file already deleted)
 
-pages: deps
+pages: dist ## Prepare and commit changes on target branch
 	@(mv $(src) .backup > /dev/null 2>&1) || true
 	@(git worktree remove $(src) --force > /dev/null 2>&1) || true
 	@git worktree add $(src) $(target)
