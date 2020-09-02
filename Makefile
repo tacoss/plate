@@ -51,23 +51,22 @@ clean: ## Remove cache and generated artifacts
 	@$(call iif,rm -r $(src),Built artifacts were deleted,Artifacts already deleted)
 	@$(call iif,unlink .tarima,Cache file was deleted,Cache file already deleted)
 
-deploy: $(src) ## Push built artifacts to github!
+pages: deps
 	@(mv $(src) .backup > /dev/null 2>&1) || true
 	@(git worktree remove $(src) --force > /dev/null 2>&1) || true
 	@git worktree add $(src) $(target)
 	@cp -r .backup/* $(src)
 	@cd $(src) && git add . && git commit -m "$(message)" || true
+
+deploy: pages ## Push built artifacts to github!
 	@git push origin $(target) -f || true
 	@(mv .backup $(src) > /dev/null 2>&1) || true
 
 deps: ## Check for installed dependencies
 	@(((ls node_modules | grep .) > /dev/null 2>&1) || npm i) || true
 
-dist:  ## Compile sources for production
-	@npm run dist -- -f
-
-build:
-	@make -s dist
+dist: deps ## Compile sources for production
+	@NODE_ENV=production npm run dist -- -f
 
 purge: clean ## Remove all from node_modules/*
 	@printf "\r* Removing all dependencies... "

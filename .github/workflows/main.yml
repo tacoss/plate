@@ -1,4 +1,4 @@
-name: Glitch Sync
+name: Sync changes
 
 on:
   push:
@@ -6,11 +6,29 @@ on:
       - master
 
 jobs:
-  sync:
+  glitch:
     runs-on: ubuntu-latest
     steps:
-    - name: Sync to Glitch Project
-      uses: kanadgupta/glitch-sync@master
-      with:
-        project-id: '${{ secrets.projectId }}'
-        auth-token: '${{ secrets.authToken }}'
+      - name: Sync to Glitch project
+        uses: kanadgupta/glitch-sync@master
+        with:
+          project-id: '${{ secrets.projectId }}'
+          auth-token: '${{ secrets.authToken }}'
+
+  gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Build assets for production
+        run: |
+          git fetch origin gh-pages
+          make dist pages
+      - name: Push changes back to github
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          force: true
