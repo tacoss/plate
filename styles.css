@@ -1,1 +1,17 @@
-*,::after,::before{box-sizing:border-box}body,html{height:100%}body{margin:0}a[aria-current=page]{font-weight:700}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+a[aria-current] {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9wYXRlL1dvcmtzcGFjZS9wbGF0ZS9zcmMvcmVzb3VyY2VzL3N0eWxlcy9pbmRleC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7RUFHRSx1QkFBQTtDQ0NEO0FERUQ7O0VBQ0UsYUFBQTtDQ0NEO0FERUQ7RUFDRSxVQUFBO0NDQUQ7QURHRDtFQUNFLGtCQUFBO0NDREQiLCJmaWxlIjoidG8uY3NzIiwic291cmNlc0NvbnRlbnQiOltudWxsLCIqLFxuKjo6YmVmb3JlLFxuKjo6YWZ0ZXIge1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuaHRtbCxcbmJvZHkge1xuICBoZWlnaHQ6IDEwMCU7XG59XG5ib2R5IHtcbiAgbWFyZ2luOiAwO1xufVxuYVthcmlhLWN1cnJlbnRdIHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG4iXX0=*/
