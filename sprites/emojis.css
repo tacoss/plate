@@ -6,11 +6,11 @@ i[class^="x-sprites-emojis-"], i[class*=" x-sprites-emojis-"] {
   background-size: 48px 98px;
 }
 
-i.x-sprites-emojis-bomb {
+i.x-sprites-emojis-pkg {
   width: 48px; height: 48px;
   background-position: -0px -0px;
 }
-i.x-sprites-emojis-pkg {
+i.x-sprites-emojis-bomb {
   width: 48px; height: 48px;
   background-position: -0px -50px;
 }
@@ -30,7 +30,7 @@ only screen and (min-resolution: 1.25dppx) {
 
 
 
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 767px) {
 
 }
 
@@ -38,7 +38,7 @@ only screen and (min-resolution: 1.25dppx) {
 
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 319px) {
 
 }
 
