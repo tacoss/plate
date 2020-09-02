@@ -6,47 +6,99 @@
 >
 > [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/dubplate)
 
-- **ESLint** &mdash; to check your code
-- **Bublé** &mdash; to transpile your ES6
-- **Rollup.js** &mdash; to bundle everything
-- **Live Reload** &mdash; to quick reload on dev!
-- **LESS** & **Pug** for other assets &mdash; y'know ;-)
+## How this is organized?
 
-Also, it enables advanced images-to-sprite output through [talavera](https://github.com/pateketrueke/talavera).
+**public/**
 
-## Installation
+Contains static assets that are copied once you build the files for your website.
 
-```bash
-$ npx haki tacoss/plate website
-```
+- Any file you save here will be public and accessible: fonts, robots.txt, stylesheets, etc.
 
-Once done just move inside with `cd website` and continue reading.
+**src/**
 
-> Are you coming from glitch.com? Try editing the files inside the `src` directory on the left and see what happens!
+Contains the source-code for your dynamic assets: stylesheets, scripts, images, pages, etc.
 
-## How it works?
+- In example, the `404.pug` file here is saved as `build/404.html` &mdash; no folder/index is created like for pages...
+- Any file in this directory will be processed by the compiler and then written on the `build` directory.
+- Any `components`, `shared` or `lib` directory within will be ignored by the compiler.
 
-It includes a fancy `Makefile` for quick usage:
+**src/app/**
 
-- `make dev` to start the development server, it'll wait for you!
-- `make dist` to build the final assets for production
-- `make clean` to remove all generated files
+Contains the application code for your javascript webapp, `.js` files in this directory will serve as entry-points.
 
-Type `make` without arguments to display usage info.
+- In example, the `src/app/main.js` will be saved as `build/main.js` instead.
 
-> Read the [tarima docs](https://github.com/tacoss/tarima#tarima) to know more about the tooling used.
+**src/lib/**
 
-Deployment is designed to go through GitHub pages ([preview](https://tacoss.github.io/plate/)), so `make deploy` would do all the required job...
+All files in this directory are completely ignored by the compiler.
 
-- If you got `fatal: invalid reference: gh-pages` try to create that branch first with `git branch gh-pages`.
-- If yoo got `fatal: 'build' already exists` type `make clean dist` before deploying.
+- Use this directory to place all the code you don't want to publish, any chunk of code like partials, helpers, views, etc.
 
-Files found at `./build` are ready to be served.
+**src/pages/**
 
-## Why not something else?
+Files here are processed and/or copied to the `build` directory.
 
-I tried (several times) to setup all goods from this repository: deps, pages, assets, etc. with Webpack, Rollup.js or even Parcel without any success yet.
+- In example, the `src/pages/example.md` will be saved as `build/example/index.html` instead.
+- They can be Markdown files, or Pug templates, etc. &mdash; try using some front-matter!
 
-So, that's why I created this starter.
+**src/resources/images/**
 
-Enjoy!
+Images in this directory are processed and copied to the `build` directory, also a `images.css` file will be written.
+
+- Images can be referred from the `build` directory, or through using the generated stylesheet.
+- Subdirectories can be used to group images, the stylesheet name will be the same as the folder name.
+
+**src/resources/scripts/**
+
+Scripts in this directory are processed and bundled if possible, they can be almost anything Rollup.js can handle.
+
+- In example, the `src/resources/scripts/app.js` will be saved as `build/app.js` instead.
+- Any file found here will be used as entry-point for further bundling.
+- By default we're shipping support for Svelte as the frontend framework for single-application-pages.
+
+**src/resources/sprites/**
+
+Images (including SVG) in this directory are processed and saved to the `build` directory, also a `sprites.svg` file will be written.
+
+- Images for retina screens MUST be suffixed with `@2x` in order to properly match and group them by name.
+- Subdirectories can be used to group sprites, the stylesheet and svg-file name will be the same as the folder name.
+- Additional stylesheets for resolving processed image-sprites (not SVG) are generated with the same name as the folder name.
+
+**src/resources/styles/**
+
+Stylesheets in this directory are processed and saved to the `build` directory, they can be almost anything Rollup.js can handle.
+
+- In example, the `src/resources/styles/main.less` will be saved as `build/main.css` instead.
+- Any file found here will be used as entry-point for further bundling.
+- By default we're shipping support for LESS as the minimal stylesheet pre-processor.
+
+## How to use the command line?
+
+Either you've cloned the repo or enter the CLI on the Glitch app the commmands are the same.
+
+- `make` &mdash; Shows all available tasks
+- `make dev` &mdash; Start development workflow
+- `make test` &mdash; Lint all source files
+- `make clean` &mdash; Remove cache files
+- `make pages` &mdash; Commit changes to `gh-pages`
+- `make deploy` &mdash; Publish changes from `gh-pages`
+- `make deps` &mdash; Check and install NodeJS dependencies
+- `make dist` &mdash; Process all stuff for production
+- `make purge` &mdash; Remove `node_modules` cache
+- `make add:*` &mdash; Creates a new file, e.g. `make add:page NAME=about.md BODY='h1 FIXME'`
+- `make rm:*` &mdash; Remove existing file, e.g. `make rm:page NAME=about.md`
+
+> Available types for `:*` suffix are: `lib`, `res` and `page` &mdash; otherwise, the filename will be inferred, e.g.
+> `make add:robots.txt` will create a `src/robots.txt` file instead (directory separators are disallowed this way).
+
+## How to publish changes to the web?
+
+- You may want to use [Github Pages](https://pages.github.com/) if you're familiar with &mdash; just type `make deploy` and enjoy!
+- You may want to use [now](https://now.sh) if you're familiar with &mdash; it already includes a `now.json` file for it.
+- You may want to publish your website somewhere else &mdash; the `build` directory is everything you'll need for...
+
+If you've cloned this, there is a preconfigured workflow file to publish through `gh-pages` on every push
+&mdash; Modify the `.github/workflows/main.yml` file to disable the `glitch` or `gh-pages` tasks if you don't need them.
+
+The `make deploy` command accepts a `ROOT` variable to configure the `<base />` tag of your generated pages, e.g. `make deploy ROOT=/demo`
+&mdash; this is particullary useful if you're setting up a `CNAME` file and you want to publish on a separated folder instead.
