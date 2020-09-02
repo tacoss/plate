@@ -14,5 +14,8 @@ mixin linkFor(path, title, external)
       if block
         block
 
-mixin baseTag
-  base(href=(ROOT || '') + '/')
+mixin iconImage(name)
+  if env.NODE_ENV !== 'production'
+    srcFile(src=`src/resources/sprites/${name}.svg`)
+  else
+    svgIcon(src=name)

@@ -3,17 +3,13 @@ include ../mixins/helpers
 doctype html
 html.no-js(lang='en')
   head
-    +baseTag
-
-    include ../partials/head
-
     meta(name='package' content=`${pkg.name} v${pkg.version}`)
     meta(name='revision' content=GIT_REVISION)
+    base(href=(ROOT || '') + '/')
 
+    include ../partials/head
   body
-
     nav #[+linkFor('/', 'Home')] | #[+linkFor('/demo', 'Demo')] | #[+linkFor('/admin', 'Admin')]
 
     block body
-
     block scripts
