@@ -154,10 +154,10 @@ pages: branch ## Prepare and commit changes on target branch
 	@git worktree add $(src) $(target)
 	@cp -r .backup/* $(src)
 	@cd $(src) && git add . && git commit -m "$(message)" || true
+	@(mv .backup $(src) > /dev/null 2>&1) || true
 
 #
 # Deployment to GitHub Pages
 #
 deploy: branch ## Push built artifacts to github!
 	@git push origin $(target) -f || true
-	@(mv .backup $(src) > /dev/null 2>&1) || true
