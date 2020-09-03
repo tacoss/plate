@@ -102,3 +102,20 @@ If you've cloned this, there is a preconfigured workflow file to publish through
 
 The `make deploy` command accepts a `ROOT` variable to configure the `<base />` tag of your generated pages, e.g. `make deploy ROOT=/demo`
 &mdash; this is particullary useful if you're setting up a `CNAME` file and you want to publish on a separated folder instead.
+
+## Well-known issues
+
+_**Github Actions** are failing on the repository_
+
+- The `glitch` task requires you to setup secrets in your repository settings, see [here](https://github.com/kanadgupta/glitch-sync#inputs) for details.
+- The `gh-pages` requires an existing branch in your repository named the same way, see below for details.
+
+_**fatal**: couldn't find remote ref gh-pages_
+
+- Create a bare `gh-pages` branch as follows and then go back to `master` to retry the `make deploy` task.
+  ```bash
+  git checkout --orphan gh-pages
+  git rm -rf .
+  git commit --allow-empty -m "initial commit"
+  git checkout master
+  ```
