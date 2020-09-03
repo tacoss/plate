@@ -98,13 +98,13 @@ rm\:%: ## Shortcut for removing files
 #
 # Development tasks
 #
-dev: deps ## Start development scripts
+dev: deps ## Start development
 	@npm run dev
 
 #
 # Testing tasks
 #
-test: deps ## Lint to reduce mistakes and smells
+test: deps ## Test for syntax issues
 	@npm run check
 
 #
@@ -129,7 +129,7 @@ clean: ## Remove cache and generated artifacts
 #
 # Clean dependencies
 #
-prune: clean ## Remove all from node_modules/*
+prune: clean ## Remove all stuff from node_modules/*
 	@printf "\r* Removing all dependencies... "
 	@rm -rf node_modules/.{bin,cache}
 	@rm -rf node_modules/*
@@ -138,7 +138,7 @@ prune: clean ## Remove all from node_modules/*
 #
 # GitHub Pages branch
 #
-branch: ## Fetch or create the target branch
+pages: ## Fetch or create the target branch
 	@(git fetch origin $(target) 2> /dev/null || (\
 		git checkout --orphan $(target);\
 		git rm -rf . > /dev/null;\
@@ -146,18 +146,13 @@ branch: ## Fetch or create the target branch
 		git checkout $(from)))
 
 #
-# Preparation for GitHub Pages
+# Deployment to GitHub Pages
 #
-pages: branch ## Prepare and commit changes on target branch
+deploy: pages ## Prepare and push changes on target branch
 	@(mv $(src) .backup > /dev/null 2>&1) || true
 	@(git worktree remove $(src) --force > /dev/null 2>&1) || true
 	@git worktree add $(src) $(target)
 	@cp -r .backup/* $(src)
 	@cd $(src) && git add . && git commit -m "$(message)" || true
 	@(mv .backup $(src) > /dev/null 2>&1) || true
-
-#
-# Deployment to GitHub Pages
-#
-deploy: branch ## Push built artifacts to github!
 	@git push origin $(target) -f || true
