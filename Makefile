@@ -19,7 +19,6 @@ filepath=$(patsubst $(_basedir),,$(_path))
 # environment vars
 GIT_REVISION ?= $(shell git rev-parse --short=7 HEAD)
 NODE_ENV ?= development
-BODY ?= '// FIXME'
 
 # export vars
 export NODE_ENV GIT_REVISION
