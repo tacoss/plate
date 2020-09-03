@@ -2,23 +2,24 @@
 PWD=$(shell pwd)
 
 # defaults
-src := build
-from := master
-target := gh-pages
-message := Release: $(shell date)
+src ?= build
+from ?= master
+target ?= gh-pages
+message ?= Release: $(shell date)
 
 # templates
 _src=src/$(patsubst res%,resources%,$(patsubst page%,pages%,$*))
-_dir=$(patsubst %/,%,$(_src)/$(NAME))
-_base=$(dir $(_dir))
+_path=$(patsubst %/,%,$(_src)$(NAME))
+_basedir=$(dir $(_path))
 
 # directories
-dirname=$(patsubst %/,%,$(_base))
-filepath=$(patsubst $(_base),,$(_dir))
+dirname=$(patsubst %/,%,$(_basedir))
+filepath=$(patsubst $(_basedir),,$(_path))
 
 # environment vars
-GIT_REVISION := $(shell git rev-parse --short=7 HEAD)
-NODE_ENV := development
+GIT_REVISION ?= $(shell git rev-parse --short=7 HEAD)
+NODE_ENV ?= development
+BODY ?= '// FIXME'
 
 # export vars
 export NODE_ENV GIT_REVISION
@@ -74,16 +75,22 @@ purge: clean ## Remove all from node_modules/*
 	@rm -rf node_modules/*
 	@echo "OK"
 
-add\:%: ## Create files, scripts or resources
-	@make -s name_not_$* has_body
-	@mkdir -p $(dirname)
-	@echo "$(BODY)" > $(PWD)/$(filepath)
+add: ## Create files, scripts or resources
+	@mkdir -p $(PWD)/$(dirname)
+	@echo $(BODY) > $(PWD)/$(filepath)
 	@printf "\r* File $(filepath) was created\n"
 
-rm\:%: ## Remove **any** stuff from your workspace
-	@make -s name_not_$*
+add\:%:
+	@make -s name_not_$* has_body
+	@make -s add NAME=$(subst :,/,$*)
+
+rm: ## Remove **any** stuff from your workspace
 	@$(call iif,rm -r $(PWD)/$(filepath),File $(filepath) was deleted,Failed to delete $(filepath))
 	@$(call iif,rmdir $(PWD)/$(dirname),Parent directory clear,Parent directory is not empty...)
+
+rm\:%:
+	@make -s name_not_$*
+	@make -s rm NAME=$(subst :,/,$*)
 
 # input validations
 has_body:
