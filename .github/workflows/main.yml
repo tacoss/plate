@@ -27,6 +27,12 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git fetch origin gh-pages
+
+          git fetch origin gh-pages 2> /dev/null || {
+            git checkout --orphan gh-pages
+            git rm -rf . > /dev/null
+            git commit --allow-empty -m "initial commit"
+            git checkout ${GITHUB_REF##*/}
+          }
 
           make deploy ROOT=${GITHUB_REPOSITORY/$GITHUB_REPOSITORY_OWNER/}
