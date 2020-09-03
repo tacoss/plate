@@ -103,6 +103,21 @@ If you've cloned this, there is a preconfigured workflow file to publish through
 The `make deploy` command accepts a `ROOT` variable to configure the `<base />` tag of your generated pages, e.g. `make deploy ROOT=/demo`
 &mdash; this is particullary useful if you're setting up a `CNAME` file and you want to publish on a separated folder instead.
 
+## Are you publishing changes from Glitch.com?
+
+If you remixed this template on glitch you may need to export its changes back to GitHub:
+
+<ol>
+  <li>
+    <p>Make sure you've granted access to your GitHub repositories.</p>
+    <img src="https://dev-to-uploads.s3.amazonaws.com/i/xjiw8p0cvikqydutt4ei.png" alt="Grant Access" width="180" />
+  </li>
+  <li>
+    <p>Once you've granted access, you should be able to export your work.</p>
+    <img src="https://dev-to-uploads.s3.amazonaws.com/i/fv1errdj2htx4vg1be90.png" alt="Export Repository" width="180" />
+  </li>
+</ol>
+
 ## Well-known issues
 
 _**Github Actions** are failing on the repository_
