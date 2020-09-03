@@ -74,7 +74,7 @@ Stylesheets in this directory are processed and saved to the `build` directory, 
 
 ## How to use the command line?
 
-Either you've cloned the repo or enter the CLI on the Glitch app the commmands are the same.
+Either you've cloned the repo or enter the CLI on the Glitch app the commands are the same.
 
 - `make` &mdash; Shows all available tasks
 - `make dev` &mdash; Start development workflow
