@@ -14,7 +14,7 @@
     "now-build": "npm run dist",
     "now-dev": "npm run dev",
     "start": "npm run dev",
-    "dev": "tarima watch -d",
+    "dev": "tarima watch -d --no-browser",
     "dist": "tarima -mqe $NODE_ENV",
     "check": "eslint 'src/**/*.{js,pug}'",
     "predist": "npm run check"
@@ -102,7 +102,7 @@
     "svelte": "^3.3.0",
     "svql": "0.0.27",
     "talavera": "^0.8.0",
-    "tarima": "^4.8.5",
+    "tarima": "^4.9.0",
     "terser": "^4.3.1",
     "yargs-parser": ">=13.1.2",
     "yrv": "0.0.25"
