@@ -15,7 +15,7 @@
     "now-dev": "npm run dev",
     "start": "npm run dev",
     "dev": "tarima watch -d --no-browser",
-    "dist": "tarima -mqe $NODE_ENV",
+    "dist": "tarima -qe $NODE_ENV",
     "check": "eslint 'src/**/*.{js,pug}'",
     "predist": "npm run check"
   },
