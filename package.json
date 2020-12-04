@@ -85,7 +85,7 @@
     "eslint-plugin-pug": "^1.1.1",
     "eslint-plugin-svelte3": "^2.7.3",
     "eslint-utils": ">=1.4.1",
-    "highlight.js": "^10.4.0",
+    "highlight.js": "^10.4.1",
     "html-minifier": "^4.0.0",
     "jpeg-js": ">=0.4.0",
     "js-yaml": ">=3.13.1",
