@@ -1,0 +1,17 @@
+[class^="x-"], [class*=" x-"] {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+i[class^="x-"], i[class*=" x-"] {
+  font-size: 0;
+  display: inline-block;
+}
+
+.x-12inches_small {
+  width: 198px; height: 180px;
+  background-image: url(12inches_small.png);
+}
+
+
+
