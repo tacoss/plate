@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta name="package" content="plate v0.0.0">
-    <meta name="revision" content="08068ff">
+    <meta name="revision" content="e96b726">
     <base href="/plate/">
     <meta lang="en">
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
     <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
     <meta name="description" content="Old boilerplate for web-pages!">
     <meta property="og:description" content="Old boilerplate for web-pages!">
-    <link rel="stylesheet" href="images.css?t=1611020519386">
-<link rel="stylesheet" href="styles.css?t=1611020519386">
-<link rel="stylesheet" href="sprites/emojis.css?t=1611020519386">
+    <link rel="stylesheet" href="images.css?t=1614127906913">
+<link rel="stylesheet" href="styles.css?t=1614127906913">
+<link rel="stylesheet" href="sprites/emojis.css?t=1614127906913">
     <title>Demo page</title>
   </head>
   <body>
@@ -30,7 +30,7 @@
 </pre>
       <p>Result:</p>
       <i class="x-sprites-emojis-pkg@2x">sprites-emojis-pkg@2x</i>
-      <i class="x-sprites-emojis-bomb@2x" title="La bomba!">sprites-emojis-bomb@2x</i>
+      <i class="x-sprites-emojis-bomb@2x" title="La bomba!">La bomba!</i>
     </fieldset>
     <fieldset>
       <legend>Images</legend>
@@ -88,6 +88,6 @@
       <svg><use xlink:href="#x-bug"></use></svg>
       <p>It renders an inline-svg during development, on production it uses a svg-sprite instead.</p>
     </fieldset>
-    <script>(function() { var hasCanvas; function isCanvasSupported() { if (typeof hasCanvas === 'undefined') { var elem = document.createElement('canvas'); hasCanvas = Boolean(elem.getContext && elem.getContext('2d')); } return hasCanvas; } function preload(el, src, width, height, className) { if (!isCanvasSupported()) { el.src = src; el.style.opacity = 1; return; } if (el.dataset.notransition !== true) { el.style.opacity = 0; } var p = new Image(); p.onload = function () { var canvas = document.createElement('canvas'); var ctx = canvas.getContext('2d'); canvas.width = width; canvas.height = height; ctx.drawImage(p, 0, 0, width, height); el.src = canvas.toDataURL('image/png'); if (el.dataset.notransition !== true) { var duration = el.dataset.duration || '.5s'; el.style.transition = `opacity ${duration}`; el.style.opacity = 1; } el.classList.add(className); }; p.src = src; } function run() { var _defaultClass = 'loaded'; Array.prototype.slice.call(document.getElementsByTagName('img')) .forEach(function(img) { var _className = img.dataset.loadedClass || _defaultClass; if (img.currentSrc.indexOf('data:') === -1) { if (img.dataset.notransition !== true) { img.style.opacity = 0; (requestAnimationFrame || setTimeout)(function() { img.style.transition = 'opacity 1s'; img.style.opacity = 1; }); } img.classList.add(_className); return; } var srcset = img.getAttribute('srcset'); if (!srcset) { img.classList.add(_className); return; } var sources = srcset.split(/\s*,\s*/) .map(function(source) { var parts = source.split(/\s+/); return { src: parts[0], size: parseInt(parts[1], 10) }; }); for (var i in sources) { if (Math.round(window.devicePixelRatio) === sources[i].size) { preload(img, sources[i].src, img.width, img.height, _className); break; } } }); } (requestAnimationFrame || setTimeout)(run); })(); </script>
+    <script>(()=>{var c;function u(){if(typeof c=="undefined"){let t=document.createElement("canvas");c=Boolean(t.getContext&&t.getContext("2d"))}return c}function l(t,e,n,o,r){if(!u()){t.src=e,t.style.opacity=1;return}t.dataset.notransition!==!0&&(t.style.opacity=0);let s=new Image;s.onload=()=>{let a=document.createElement("canvas"),i=a.getContext("2d");if(a.width=n,a.height=o,i.drawImage(s,0,0,n,o),t.src=a.toDataURL("image/png"),t.dataset.notransition!==!0){let d=t.dataset.duration||".5s";t.style.transition=`opacity ${d}`,t.style.opacity=1}t.classList.add(r)},s.src=e}function p(){let t="loaded";[].slice.call(document.getElementsByTagName("img")).forEach(e=>{let n=e.dataset.loadedClass||t;if(e.currentSrc.indexOf("data:")===-1){e.dataset.notransition!==!0&&(e.style.opacity=0,(requestAnimationFrame||setTimeout)(()=>{e.style.transition="opacity 1s",e.style.opacity=1})),e.classList.add(n);return}let o=e.getAttribute("srcset");if(!o){e.classList.add(n);return}let r=o.split(/\s*,\s*/).map(s=>{let a=s.split(/\s+/);return{src:a[0],size:parseInt(a[1],10)}});Object.keys(r).some(s=>Math.round(window.devicePixelRatio)===r[s].size?(l(e,r[s].src,e.width,e.height,n),!0):!1)})}(requestAnimationFrame||setTimeout)(p);})(); </script>
   </body>
 </html>
