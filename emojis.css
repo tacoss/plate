@@ -1,0 +1,44 @@
+i[class^="icon-emojis-"], i[class*=" icon-emojis-"] {
+  display: inline-block;
+  background-image: url(emojis.png);
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-size: 48px 98px;
+}
+
+i.icon-emojis-bomb {
+  width: 48px; height: 48px;
+  background-position: -0px -0px;
+}
+i.icon-emojis-pkg {
+  width: 48px; height: 48px;
+  background-position: -0px -50px;
+}
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 1.25dppx) {
+  i[class^="icon-emojis-"], i[class*=" icon-emojis-"] {
+    background-image: url(emojis@2x.png);
+  }
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 519px) {
+
+}
+
+@media screen and (max-width: 319px) {
+
+}
+

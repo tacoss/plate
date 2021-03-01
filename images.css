@@ -1,17 +1,29 @@
-[class^="x-"], [class*=" x-"] {
+[class^="icon-"], [class*=" icon-"] {
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
-i[class^="x-"], i[class*=" x-"] {
+i[class^="icon-"], i[class*=" icon-"] {
   font-size: 0;
   display: inline-block;
 }
 
-.x-12inches_small {
-  width: 198px; height: 180px;
+.icon-12inches_small {
+  width: 99px; height: 90px;
   background-image: url(images/12inches_small.png);
 }
 
 
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 1.25dppx) {
+  .icon-12inches_small {
+    background-image: url(images/12inches_small@2x.png);
+  }
+  
+}
 
