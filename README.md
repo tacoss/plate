@@ -50,11 +50,11 @@ Images in this directory are processed and copied to the `build` directory, also
 
 **src/resources/scripts/**
 
-Scripts in this directory are processed and bundled if possible, they can be almost anything Rollup.js can handle.
+Scripts in this directory are processed and bundled if possible, they can be almost anything [esbuild](https://esbuild.github.io/) can handle.
 
 - In example, the `src/resources/scripts/app.js` will be saved as `build/app.js` instead.
 - Any file found here will be used as entry-point for further bundling.
-- By default we're shipping support for Svelte as the frontend framework for single-application-pages.
+- By default we're shipping support for Svelte as the frontend framework for single-page-applications.
 
 **src/resources/sprites/**
 
@@ -66,7 +66,7 @@ Images (including SVG) in this directory are processed and saved to the `build` 
 
 **src/resources/styles/**
 
-Stylesheets in this directory are processed and saved to the `build` directory, they can be almost anything Rollup.js can handle.
+Stylesheets in this directory are processed and saved to the `build` directory, they can be Styl, SASS, LESS or PostCSS.
 
 - In example, the `src/resources/styles/main.less` will be saved as `build/main.css` instead.
 - Any file found here will be used as entry-point for further bundling.
