@@ -8,7 +8,7 @@
 <Router path="/admin">
   <nav>
     <nav>
-      <Link exact href="/admin/">Dashboard</Link>
+      <Link exact href="/admin">Dashboard</Link>
       | <Link exact href="/admin/not-found">Page not found</Link>
     </nav>
   </nav>

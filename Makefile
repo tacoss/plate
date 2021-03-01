@@ -124,7 +124,7 @@ deps: ## Check for installed dependencies
 #
 clean: ## Remove cache and generated artifacts
 	@$(call iif,rm -r $(src),Built artifacts were deleted,Artifacts already deleted)
-	@$(call iif,unlink .tarima,Cache file was deleted,Cache file already deleted)
+	@$(call iif,unlink cache.json,Cache file was deleted,Cache file already deleted)
 
 #
 # Clean dependencies

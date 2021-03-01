@@ -1,8 +1,8 @@
 *.log
 *.todo
 .env
-.tarima
 .DS_Store
+cache.json
 build
 generated
 node_modules
