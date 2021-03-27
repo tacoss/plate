@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta name="package" content="plate v0.0.0">
-    <meta name="revision" content="6216b0f">
+    <meta name="revision" content="119c9bc">
     <base href="/plate/">
     <meta lang="en">
     <meta charset="utf-8">
@@ -14,23 +14,25 @@
     <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
     <meta name="description" content="Old boilerplate for web-pages!">
     <meta property="og:description" content="Old boilerplate for web-pages!">
-    <link rel="stylesheet" href="images.css?t=1614579963845"><link rel="stylesheet" href="styles.css?t=1614579963845"><link rel="stylesheet" href="emojis.css?t=1614579963845">
+    <link rel="stylesheet" href="images.css?t=1616823633683"><link rel="stylesheet" href="styles.css?t=1616823633683"><link rel="stylesheet" href="emojis.css?t=1616823633683">
     <title>Demo page</title>
+    <link rel="stylesheet" href="//unpkg.com/highlight.js/styles/github.css">
     <style>
       .inline { list-style-type: none; display: flex; align-items: center }
       .inline li + li { margin-left: 1em }
     </style>
+    <script type="module" src="scripts/main.js?t=1616823633683"></script>
   <script>(()=>{var c;function u(){if(typeof c=="undefined"){let t=document.createElement("canvas");c=Boolean(t.getContext&&t.getContext("2d"))}return c}function l(t,e,n,o,r){if(!u()){t.src=e,t.style.opacity=1;return}t.dataset.notransition!==!0&&(t.style.opacity=0);let s=new Image;s.onload=()=>{let a=document.createElement("canvas"),i=a.getContext("2d");if(a.width=n,a.height=o,i.drawImage(s,0,0,n,o),t.src=a.toDataURL("image/png"),t.dataset.notransition!==!0){let d=t.dataset.duration||".5s";t.style.transition=`opacity ${d}`,t.style.opacity=1}t.classList.add(r)},s.src=e}function p(){let t="loaded";[].slice.call(document.getElementsByTagName("img")).forEach(e=>{let n=e.dataset.loadedClass||t;if(e.currentSrc.indexOf("data:")===-1){e.dataset.notransition!==!0&&(e.style.opacity=0,(requestAnimationFrame||setTimeout)(()=>{e.style.transition="opacity 1s",e.style.opacity=1})),e.classList.add(n);return}let o=e.getAttribute("srcset");if(!o){e.classList.add(n);return}let r=o.split(/\s*,\s*/).map(s=>{let a=s.split(/\s+/);return{src:a[0],size:parseInt(a[1],10)}});Object.keys(r).some(s=>Math.round(window.devicePixelRatio)===r[s].size?(l(e,r[s].src,e.width,e.height,n),!0):!1)})}(requestAnimationFrame||setTimeout)(p);})();
 </script></head>
   <body>
     <nav>
-      <a href="/plate/">Home</a> |
-      <a aria-current="page" href="/plate/demo">Demo</a> |
+      <a href="/plate/">Home</a> | 
+      <a aria-current="page" href="/plate/demo">Demo</a> | 
       <a href="/plate/admin">Admin</a>
     </nav>
     <fieldset>
       <legend>Sprites</legend>
-      <p>Source:</p>
+      <p>Example:</p>
       <pre>&lt;icon src="emojis/pkg" /&gt;
 {&#64;icon src="emojis/bomb" title="La bomba!"}}
 </pre>
@@ -45,20 +47,20 @@
     </fieldset>
     <fieldset>
       <legend>Images</legend>
-      <p>Source:</p>
+      <p>Example:</p>
       <pre>&lt;image src="12inches_small" title="OSOMS" /&gt;
 </pre>
       <p>Result:</p>
       <ul class="inline">
         <li>
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" height="90" width="99" data-inline-ignore srcset="images/12inches_small.png 1x, images/12inches_small@2x.png 2x" title="OSOMS">
+          <img src="images/12inches_small.png" title="OSOMS">
         </li>
       </ul>
       <p>The placed image is using `srcset`, also it should fade in onload...</p>
     </fieldset>
     <fieldset>
       <legend>Icons</legend>
-      <p>Source:</p>
+      <p>Example:</p>
       <pre>&lt;import from="sprites/bug" style="fill:red" /&gt;
 &lt;icon src="sprites.svg#bug" width="48" height="48" style="fill:green" /&gt;
 &lt;icon src="sprites.svg#bug" inline width="48" style="fill:blue" /&gt;
@@ -71,6 +73,7 @@
       <ul class="inline">
         <li>
           <svg style="fill:red" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M17.5 12h-1.515a8.318 8.318 0 0 0-.781-3.102A2.504 2.504 0 0 0 16.999 6.5a.5.5 0 0 0-1 0c0 .761-.57 1.392-1.306 1.487a7.452 7.452 0 0 0-.904-1.124A4.505 4.505 0 0 0 9.499 1a4.505 4.505 0 0 0-4.29 5.863 7.211 7.211 0 0 0-.904 1.124A1.502 1.502 0 0 1 2.999 6.5a.5.5 0 0 0-1 0c0 1.134.759 2.093 1.795 2.398A8.337 8.337 0 0 0 3.013 12H1.499a.5.5 0 0 0 0 1h1.515a8.318 8.318 0 0 0 .781 3.102A2.504 2.504 0 0 0 2 18.5a.5.5 0 0 0 1 0c0-.761.57-1.392 1.306-1.487.174.266.365.521.571.762C6.107 19.21 7.748 20 9.499 20s3.393-.79 4.622-2.225c.207-.241.397-.496.571-.762a1.502 1.502 0 0 1 1.306 1.487.5.5 0 0 0 1 0 2.504 2.504 0 0 0-1.795-2.398A8.337 8.337 0 0 0 15.984 13h1.514a.5.5 0 0 0 0-1zm-8-10a3.504 3.504 0 0 1 3.443 4.134C11.921 5.396 10.738 5 9.5 5s-2.421.395-3.443 1.134A3.504 3.504 0 0 1 9.5 2zM4 12.5c0-3.385 2.201-6.173 5-6.473v12.946c-2.799-.3-5-3.088-5-6.473zm6 6.473V6.027c2.799.3 5 3.088 5 6.473s-2.201 6.173-5 6.473z"/></svg>
+
         </li>
         <li>
           <svg width="48" height="48" style="fill:green"><use xlink:href="#icon-bug"></use></svg>
@@ -90,7 +93,7 @@
     </fieldset>
     <fieldset>
       <legend>Links</legend>
-      <p>Source:</p>
+      <p>Example:</p>
       <pre>{&#64;alink for="/" text="Home"}
 &lt;alink for="/demo"&gt;Here&lt;/alink&gt;
 </pre>
@@ -102,6 +105,33 @@
         </li>
       </ul>
       <p>Use `&lt;alink for="..."&gt;...&lt;/alink&gt;` to render regular links, it'll have `[aria-current=page]` attached if matches the rendered URL</p>
+    </fieldset>
+    <fieldset>
+      <legend>Resources</legend>
+      <p>Example:</p><pre class="hljs"><code class="lang-js"><span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;somedom&#x27;</span>;
+<span class="hljs-keyword">import</span> url <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../images/12inches_small.png&#x27;</span>;
+
+target.appendChild(render([<span class="hljs-string">&#x27;img&#x27;</span>, { <span class="hljs-attr">src</span>: url }]));
+</code></pre>
+      <p>Result:</p>
+      <ul class="inline">
+        <li>
+          <div id="target"></div>
+        </li>
+      </ul>
+      <p>Imported resources would be resolved against built files, also `url(...)` would work</p>
+    </fieldset>
+    <fieldset>
+      <legend>Source-code</legend>
+      <p>Example:</p>
+      <pre>{&#64;source path: "../app/index.js"}
+</pre>
+      <p>Result:</p><pre class="hljs"><code class="lang-js"><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/App.svelte&#x27;</span>;
+
+<span class="hljs-keyword">new</span> App({ <span class="hljs-comment">// eslint-disable-line</span>
+  <span class="hljs-attr">target</span>: <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;#app&#x27;</span>),
+});
+</code></pre>
     </fieldset>
   </body>
 </html>

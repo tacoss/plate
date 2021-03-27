@@ -1,0 +1,2 @@
+import "./test.js";
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsic3JjL3Jlc291cmNlcy9zY3JpcHRzL21haW4uanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImltcG9ydCAnLi90ZXN0LmpzJztcbiJdLAogICJtYXBwaW5ncyI6ICJBQUFBOyIsCiAgIm5hbWVzIjogW10KfQo=
