@@ -111,7 +111,7 @@ test: deps ## Test for syntax issues
 # Build task
 #
 dist: deps ## Compile sources for production
-	@NODE_ENV=production npm run dist -- -f
+	@NODE_ENV=production npm run dist -- $(DIST_FLAGS)
 
 #
 # Check dependencies
@@ -123,7 +123,7 @@ deps: ## Check for installed dependencies
 # Cleanup
 #
 clean: ## Remove cache and generated artifacts
-	@$(call iif,rm -r $(src),Built artifacts were deleted,Artifacts already deleted)
+	@$(call iif,rm -rf $(src),Built artifacts were deleted,Artifacts already deleted)
 	@$(call iif,unlink cache.json,Cache file was deleted,Cache file already deleted)
 
 #

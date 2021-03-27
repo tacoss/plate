@@ -17,7 +17,7 @@
     "dev": "npm run build -- -w",
     "dist": "npm run build --",
     "check": "eslint 'src/**/*.{js,pug}'",
-    "build": "mortero -cpublic:. -X'{lib,shared,components}' -ecss.less -I.gitignore",
+    "build": "mortero -dMncpublic:. -X'{lib,shared,components}' -ecss.less -I.gitignore",
     "predist": "npm run check"
   },
   "repository": {
@@ -25,12 +25,13 @@
     "url": "https://github.com/tacoss/plate.git",
     "issues": "https://github.com/tacoss/plate/issues"
   },
-  "bundle": {
+  "mortero": {
+    "bundle": "**/index.js",
     "rename": [
-      "**/pages/**/!(index).html:{basedir}/{name}/index.html",
-      "**/{pages,resources}/**:{filepath/1}",
+      "src/**:{filepath/1}",
       "**/index.(css|js):{basedir}{ext}",
-      "**/app/**:{filepath/1}"
+      "**/{pages,resources}/**:{filepath/1}",
+      "**/!(index).html:{basedir}/{name}/index.html"
     ],
     "options": {
       "kramed": {
@@ -47,12 +48,16 @@
     "eslint": "^7.14.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-pug": "^1.1.1",
+    "eslint-plugin-pug": "^1.2.3",
     "eslint-plugin-svelte3": "^3.0.0",
     "eslint-utils": ">=1.4.1",
-    "highlight.js": "^10.6.0",
+    "highlight.js": "^10.7.1",
+    "kramed": "^0.5.6",
+    "less": "^4.1.1",
     "less-plugin-autoprefix": "^2.0.0",
-    "mortero": "^0.0.10",
+    "moment": "^2.29.1",
+    "mortero": "^0.0.13",
+    "pug": "^3.0.2",
     "svelte": "^3.34.0",
     "svql": "0.0.28",
     "yrv": "0.0.35"

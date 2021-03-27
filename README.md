@@ -19,7 +19,7 @@ Contains static assets that are copied once you build the files for your website
 Contains the source-code for your dynamic assets: stylesheets, scripts, images, pages, etc.
 
 - In example, the `404.pug` file here is saved as `build/404.html` &mdash; no folder/index is created like for pages...
-- Any file in this directory will be processed by the compiler and then written on the `build` directory.
+- Any file in this directory will be processed by the compiler and then written on the `build` destination.
 - Any `components`, `shared` or `lib` directory within will be ignored by the compiler.
 
 **src/app/**
@@ -36,16 +36,16 @@ All files in this directory are completely ignored by the compiler.
 
 **src/pages/**
 
-Files here are processed and/or copied to the `build` directory.
+Files here are processed and/or copied to the `build` destination.
 
 - In example, the `src/pages/example.md` will be saved as `build/example/index.html` instead.
 - They can be Markdown files, or Pug templates, etc. &mdash; try using some front-matter!
 
 **src/resources/images/**
 
-Images in this directory are processed and copied to the `build` directory, also a `images.css` file will be written.
+Images in this directory are processed and copied to the `build` destination, also a `images.css` file will be written.
 
-- Images can be referred from the `build` directory, or through using the generated stylesheet.
+- Images can be referred from the `build` destination, or through using the generated stylesheet.
 - Subdirectories can be used to group images, the stylesheet name will be the same as the folder name.
 
 **src/resources/scripts/**
@@ -53,12 +53,11 @@ Images in this directory are processed and copied to the `build` directory, also
 Scripts in this directory are processed and bundled if possible, they can be almost anything [esbuild](https://esbuild.github.io/) can handle.
 
 - In example, the `src/resources/scripts/app.js` will be saved as `build/app.js` instead.
-- Any file found here will be used as entry-point for further bundling.
-- By default we're shipping support for Svelte as the frontend framework for single-page-applications.
+- By default we're using Svelte as the frontend framework for single-page-applications.
 
 **src/resources/sprites/**
 
-Images (including SVG) in this directory are processed and saved to the `build` directory, also a `sprites.svg` file will be written.
+Images (including SVG) in this directory are processed and saved to the `build` destination, also a `sprites.svg` file will be written.
 
 - Images for retina screens MUST be suffixed with `@2x` in order to properly match and group them by name.
 - Subdirectories can be used to group sprites, the stylesheet and svg-file name will be the same as the folder name.
@@ -66,11 +65,10 @@ Images (including SVG) in this directory are processed and saved to the `build` 
 
 **src/resources/styles/**
 
-Stylesheets in this directory are processed and saved to the `build` directory, they can be Styl, SASS, LESS or PostCSS.
+Stylesheets in this directory are processed and saved to the `build` destination, they can be Styl, SASS, LESS or PostCSS.
 
 - In example, the `src/resources/styles/main.less` will be saved as `build/main.css` instead.
-- Any file found here will be used as entry-point for further bundling.
-- By default we're shipping support for LESS as the minimal stylesheet pre-processor.
+- By default we're using LESS as the minimal stylesheet pre-processor.
 
 ## How to use the command line?
 
@@ -95,7 +93,7 @@ Either you've cloned the repo or enter the CLI on the Glitch app the commands ar
 
 - You may want to use [Github Pages](https://pages.github.com/) if you're familiar with &mdash; just type `make deploy` and enjoy!
 - You may want to use [now](https://now.sh) if you're familiar with &mdash; it already includes a `now.json` file for it.
-- You may want to publish your website somewhere else &mdash; the `build` directory is everything you'll need for...
+- You may want to publish your website somewhere else &mdash; the `build` destination is everything you'll need for...
 
 If you've cloned this, there is a preconfigured workflow file to publish through `gh-pages` on every push
 &mdash; Modify the `.github/workflows/main.yml` file to disable the `glitch` or `gh-pages` tasks if you don't need them.

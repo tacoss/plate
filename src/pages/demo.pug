@@ -1,16 +1,18 @@
-extends ../lib/layouts/default
+extends lib/layouts/default
 
 block head
   title Demo page
+  link(rel='stylesheet' href='//unpkg.com/highlight.js/styles/github.css')
   style.
     .inline { list-style-type: none; display: flex; align-items: center }
     .inline li + li { margin-left: 1em }
+  import(from='main.js')
 
 block body
   fieldset
     legend Sprites
 
-    p Source:
+    p Example:
     pre.
       &lt;icon src="emojis/pkg" /&gt;
       {&#64;icon src="emojis/bomb" title="La bomba!"}}
@@ -25,7 +27,7 @@ block body
   fieldset
     legend Images
 
-    p Source:
+    p Example:
     pre.
       &lt;image src="12inches_small" title="OSOMS" /&gt;
 
@@ -38,7 +40,7 @@ block body
   fieldset
     legend Icons
 
-    p Source:
+    p Example:
     pre.
       &lt;import from="sprites/bug" style="fill:red" /&gt;
       &lt;icon src="sprites.svg#bug" width="48" height="48" style="fill:green" /&gt;
@@ -62,7 +64,7 @@ block body
   fieldset
     legend Links
 
-    p Source:
+    p Example:
     pre.
       {&#64;alink for="/" text="Home"}
       &lt;alink for="/demo"&gt;Here&lt;/alink&gt;
@@ -74,3 +76,24 @@ block body
 
     p Use `&lt;alink for="..."&gt;...&lt;/alink&gt;` to render regular links, it'll have `[aria-current=page]` attached if matches the rendered URL
 
+  fieldset
+    legend Resources
+
+    p Example:
+    |{@source path: "src/resources/scripts/test.js"}
+
+    p Result:
+    ul.inline
+      li: #target
+
+    p Imported resources would be resolved against built files, also `url(...)` would work
+
+  fieldset
+    legend Source-code
+
+    p Example:
+    pre.
+      {&#64;source path: "../app/index.js"}
+
+    p Result:
+    |{@source path: "../app/index.js"}
