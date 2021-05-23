@@ -8,6 +8,12 @@
     "svelte3",
     "pug"
   ],
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module"
