@@ -14,10 +14,10 @@
     "now-build": "npm run dist",
     "now-dev": "npm run dev",
     "start": "npm run dev",
-    "dev": "npm run build -- -w",
+    "dev": "npm run build -- -Mnw",
     "dist": "npm run build --",
     "check": "eslint 'src/**/*.{js,pug,svelte}'",
-    "build": "mortero -dMncpublic:. -X'{lib,shared,components}' -ecss.less -I.gitignore",
+    "build": "mortero -dcpublic:. -X'{lib,shared,components}' -ecss.less -I.gitignore",
     "predist": "npm run check"
   },
   "repository": {
@@ -56,10 +56,10 @@
     "less": "^4.1.1",
     "less-plugin-autoprefix": "^2.0.0",
     "moment": "^2.29.1",
-    "mortero": "^0.0.13",
+    "mortero": "^0.0.42",
     "pug": "^3.0.2",
     "svelte": "^3.38.2",
-    "svql": "0.0.28",
-    "yrv": "0.0.35"
+    "svql": "^0.0.28",
+    "yrv": "^0.0.50"
   }
 }

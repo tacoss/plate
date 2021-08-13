@@ -7,7 +7,9 @@ html.no-js(lang='en')
 
     include ../partials/head
   body
-    nav #[alink(for='/') Home] | #[alink(for='/demo') Demo] | #[alink(for='/admin') Admin]
+    nav #[alink(for='/') Home] | #[alink(for='/demo') Demo] | #[alink(for='/other') Other] | #[alink(for='/admin') Admin]
 
     block body
+      != yield
+
     block scripts
