@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta name="package" content="plate v0.0.0">
-    <meta name="revision" content="b5a9790">
+    <meta name="revision" content="2d74c45">
     <base href="/plate/">
     <meta lang="en">
     <meta charset="utf-8">
@@ -14,21 +14,22 @@
     <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
     <meta name="description" content="Old boilerplate for web-pages!">
     <meta property="og:description" content="Old boilerplate for web-pages!">
-    <link rel="stylesheet" href="images.css?t=1628692520026"><link rel="stylesheet" href="styles.css?t=1628692520026"><link rel="stylesheet" href="emojis.css?t=1628692520026">
+    <link rel="stylesheet" href="images.css?t=1628833995049"><link rel="stylesheet" href="styles.css?t=1628833995049"><link rel="stylesheet" href="emojis.css?t=1628833995049">
     <title>Demo page</title>
     <link rel="stylesheet" href="//unpkg.com/highlight.js/styles/github.css">
     <style>
       .inline { list-style-type: none; display: flex; align-items: center }
       .inline li + li { margin-left: 1em }
     </style>
-    <script type="module" src="scripts/main.js?t=1628692520026"></script>
+    <script type="module" src="scripts/main.js?t=1628833995049"></script>
   <script>(()=>{var c;function u(){if(typeof c=="undefined"){let t=document.createElement("canvas");c=Boolean(t.getContext&&t.getContext("2d"))}return c}function l(t,e,n,o,r){if(!u()){t.src=e,t.style.opacity=1;return}t.dataset.notransition!==!0&&(t.style.opacity=0);let s=new Image;s.onload=()=>{let a=document.createElement("canvas"),i=a.getContext("2d");if(a.width=n,a.height=o,i.drawImage(s,0,0,n,o),t.src=a.toDataURL("image/png"),t.dataset.notransition!==!0){let d=t.dataset.duration||".5s";t.style.transition=`opacity ${d}`,t.style.opacity=1}t.classList.add(r)},s.src=e}function p(){let t="loaded";[].slice.call(document.getElementsByTagName("img")).forEach(e=>{let n=e.dataset.loadedClass||t;if(e.currentSrc.indexOf("data:")===-1){e.dataset.notransition!==!0&&(e.style.opacity=0,(requestAnimationFrame||setTimeout)(()=>{e.style.transition="opacity 1s",e.style.opacity=1})),e.classList.add(n);return}let o=e.getAttribute("srcset");if(!o){e.classList.add(n);return}let r=o.split(/\s*,\s*/).map(s=>{let a=s.split(/\s+/);return{src:a[0],size:parseInt(a[1],10)}});Object.keys(r).some(s=>Math.round(window.devicePixelRatio)===r[s].size?(l(e,r[s].src,e.width,e.height,n),!0):!1)})}(requestAnimationFrame||setTimeout)(p);})();
 </script></head>
   <body>
     <nav>
-      <a href="/plate/">Home</a> | 
-      <a aria-current="page" href="/plate/demo">Demo</a> | 
-      <a href="/plate/admin">Admin</a>
+      <a href=".">Home</a> | 
+      <a aria-current="page" href="./demo">Demo</a> | 
+      <a href="./other">Other</a> | 
+      <a href="./admin">Admin</a>
     </nav>
     <fieldset>
       <legend>Sprites</legend>
@@ -99,9 +100,9 @@
 </pre>
       <p>Result:</p>
       <ul class="inline">
-        <li><a href="/plate/">Home</a></li>
+        <li><a href=".">Home</a></li>
         <li>
-          <a aria-current="page" id="here" href="/plate/demo#here">Here</a>
+          <a aria-current="page" id="here" href="./demo#here">Here</a>
         </li>
       </ul>
       <p>Use `&lt;alink for="..."&gt;...&lt;/alink&gt;` to render regular links, it'll have `[aria-current=page]` attached if matches the rendered URL</p>
@@ -111,7 +112,7 @@
       <p>Example:</p><pre class="hljs"><code class="lang-js"><span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;somedom&#x27;</span>;
 <span class="hljs-keyword">import</span> url <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../images/12inches_small.png&#x27;</span>;
 
-target.appendChild(render([<span class="hljs-string">&#x27;img&#x27;</span>, { <span class="hljs-attr">src</span>: url }]));
+target.<span class="hljs-title function_">appendChild</span>(<span class="hljs-title function_">render</span>([<span class="hljs-string">&#x27;img&#x27;</span>, { <span class="hljs-attr">src</span>: url }]));
 </code></pre>
       <p>Result:</p>
       <ul class="inline">
@@ -126,10 +127,10 @@ target.appendChild(render([<span class="hljs-string">&#x27;img&#x27;</span>, { <
       <p>Example:</p>
       <pre>{&#64;source path: "../app/index.js"}
 </pre>
-      <p>Result:</p><pre class="hljs"><code class="lang-js"><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/App.svelte&#x27;</span>;
+      <p>Result:</p><pre class="hljs"><code class="lang-js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/App.svelte&#x27;</span>;
 
-<span class="hljs-keyword">new</span> App({ <span class="hljs-comment">// eslint-disable-line</span>
-  <span class="hljs-attr">target</span>: <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;#app&#x27;</span>),
+<span class="hljs-keyword">new</span> <span class="hljs-title class_">App</span>({ <span class="hljs-comment">// eslint-disable-line</span>
+  <span class="hljs-attr">target</span>: <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#app&#x27;</span>),
 });
 </code></pre>
     </fieldset>

@@ -1,4 +1,2 @@
-import {render} from "//cdn.skypack.dev/somedom";
-var url = "images/12inches_small.png";
-target.appendChild(render(["img", {src: url}]));
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsic3JjL3Jlc291cmNlcy9zY3JpcHRzL3Rlc3QuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImltcG9ydCB7IHJlbmRlciB9IGZyb20gJ3NvbWVkb20nO1xuaW1wb3J0IHVybCBmcm9tICcuLi9pbWFnZXMvMTJpbmNoZXNfc21hbGwucG5nJztcblxudGFyZ2V0LmFwcGVuZENoaWxkKHJlbmRlcihbJ2ltZycsIHsgc3JjOiB1cmwgfV0pKTtcbiJdLAogICJtYXBwaW5ncyI6ICJBQUFBO0FBQ0E7QUFFQSxPQUFPLFlBQVksT0FBTyxDQUFDLE9BQU8sQ0FBRSxLQUFLOyIsCiAgIm5hbWVzIjogW10KfQo=
+const { render:m } = require("somedom");const r = require("../images/12inches_small.png");target.appendChild(m(["img",{src:r}]));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9yZXNvdXJjZXMvc2NyaXB0cy90ZXN0LmpzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHJlbmRlciB9IGZyb20gJ3NvbWVkb20nO1xuaW1wb3J0IHVybCBmcm9tICcuLi9pbWFnZXMvMTJpbmNoZXNfc21hbGwucG5nJztcblxudGFyZ2V0LmFwcGVuZENoaWxkKHJlbmRlcihbJ2ltZycsIHsgc3JjOiB1cmwgfV0pKTtcbiJdLCJtYXBwaW5ncyI6IkFBQUEsaUNBQ0EsNENBRUEsT0FBTyxZQUFZLEVBQU8sQ0FBQyxNQUFPLENBQUUsSUFBSyIsIm5hbWVzIjpbXX0=
