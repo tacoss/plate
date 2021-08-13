@@ -26,7 +26,10 @@
     "issues": "https://github.com/tacoss/plate/issues"
   },
   "mortero": {
-    "bundle": "**/index.js",
+    "bundle": [
+      "**/index.js",
+      "**/scripts/*.js"
+    ],
     "rename": [
       "src/**:{filepath/1}",
       "**/index.(css|js):{basedir}{ext}",
@@ -58,6 +61,7 @@
     "moment": "^2.29.1",
     "mortero": "^0.0.42",
     "pug": "^3.0.2",
+    "somedom": "^0.3.3",
     "svelte": "^3.38.2",
     "svql": "^0.0.28",
     "yrv": "^0.0.50"
