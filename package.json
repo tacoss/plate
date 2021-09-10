@@ -15,7 +15,7 @@
     "now-dev": "npm run dev",
     "start": "npm run dev",
     "dev": "npm run build -- -w",
-    "dist": "npm run build --",
+    "dist": "npm run build -- -q",
     "check": "eslint 'src/**/*.{js,pug,svelte}'",
     "build": "mortero -dcpublic:. -X'{lib,shared,components}' -ecss.less -I.gitignore",
     "predist": "npm run check"
@@ -58,7 +58,7 @@
     "less": "^4.1.1",
     "less-plugin-autoprefix": "^2.0.0",
     "moment": "^2.29.1",
-    "mortero": "^0.0.43",
+    "mortero": "^0.0.45",
     "pug": "^3.0.2",
     "somedom": "^0.3.3",
     "svelte": "^3.38.2",
