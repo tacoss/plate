@@ -30,10 +30,10 @@ filepath=$(patsubst $(_basedir),,$(_path))
 #
 # Environment vars
 #
-GIT_REVISION=$(shell git rev-parse --short=7 HEAD)
-NODE_ENV=development
+SOURCE_VERSION ?= $(shell git rev-parse --short=7 HEAD)
+NODE_ENV ?= development
 
-export NODE_ENV GIT_REVISION
+export NODE_ENV SOURCE_VERSION
 
 #
 # Targets

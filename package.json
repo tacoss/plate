@@ -58,10 +58,10 @@
     "less": "^4.1.1",
     "less-plugin-autoprefix": "^2.0.0",
     "moment": "^2.29.1",
-    "mortero": "^0.0.45",
+    "mortero": "^0.0.48",
     "pug": "^3.0.2",
     "somedom": "^0.3.3",
-    "svelte": "^3.38.2",
+    "svelte": "^3.44.3",
     "svql": "^0.0.28",
     "yrv": "^0.0.50"
   }
