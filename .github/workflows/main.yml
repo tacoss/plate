@@ -6,15 +6,15 @@ on:
       - master
 
 jobs:
-  glitch:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Sync to Glitch project
-        uses: kanadgupta/glitch-sync@v1.1
-        with:
-          project-id: '${{ secrets.projectId }}'
-          auth-token: '${{ secrets.authToken }}'
+  # glitch:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     -
+  #       name: Sync to Glitch project
+  #       uses: kanadgupta/glitch-sync@v1.1
+  #       with:
+  #         project-id: '${{ secrets.projectId }}'
+  #         auth-token: '${{ secrets.authToken }}'
 
   gh-pages:
     runs-on: ubuntu-latest
