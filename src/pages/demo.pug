@@ -2,7 +2,6 @@ extends lib/layouts/default
 
 block head
   title Demo page
-  link(rel='stylesheet' href='//unpkg.com/highlight.js/styles/github.css')
   style.
     .inline { list-style-type: none; display: flex; align-items: center }
     .inline li + li { margin-left: 1em }
@@ -97,3 +96,6 @@ block body
 
     p Result:
     |{@source path: "../app/index.js"}
+
+    p Included source-code have support for diff-syntax, e.g.
+    |{@source path: "../app/lib/diff.js"}

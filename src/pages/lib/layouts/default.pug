@@ -6,6 +6,23 @@ html.no-js(lang='en')
     base(href=(ROOT || '') + '/')
 
     include ../partials/head
+
+    link(rel='stylesheet' href='//unpkg.com/highlight.js/styles/github.css')
+    - console.log(typeof example)
+
+    style.
+      .inserted { background-color: #e6ffec; }
+      .deleted { background-color: #ffebe9; }
+      pre {
+        outline: 1px dashed gray;
+        padding: .5em;
+      }
+      pre > code[data-source]::before {
+        content: attr(data-source);
+        float: right;
+        display: block;
+        opacity: .5;
+      }
   body
     nav #[alink(for='/') Home] | #[alink(for='/demo') Demo] | #[alink(for='/other') Other] | #[alink(for='/admin') Admin]
 
