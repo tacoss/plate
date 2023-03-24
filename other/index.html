@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta name="package" content="plate v0.0.0">
-    <meta name="revision" content="daa3721">
+    <meta name="revision" content="14e3bb6">
     <base href="/plate/">
     <meta lang="en">
     <meta charset="utf-8">
@@ -14,10 +14,25 @@
     <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
     <meta name="description" content="Old boilerplate for web-pages!">
     <meta property="og:description" content="Old boilerplate for web-pages!">
-    <link rel="stylesheet" href="images.css?t=daa3721">
-<link rel="stylesheet" href="styles.css?t=daa3721">
-<link rel="stylesheet" href="emojis.css?t=daa3721">
+    <link rel="stylesheet" href="images.css?t=14e3bb6">
+<link rel="stylesheet" href="styles.css?t=14e3bb6">
+<link rel="stylesheet" href="emojis.css?t=14e3bb6">
 
+    <link rel="stylesheet" href="//unpkg.com/highlight.js/styles/github.css">
+    <style>
+      .inserted { background-color: #e6ffec; }
+      .deleted { background-color: #ffebe9; }
+      pre {
+        outline: 1px dashed gray;
+        padding: .5em;
+      }
+      pre > code[data-source]::before {
+        content: attr(data-source);
+        float: right;
+        display: block;
+        opacity: .5;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -26,6 +41,20 @@
       <a aria-current="page" href="./other">Other</a> | 
       <a href="./admin">Admin</a>
     </nav><h1 id="it-also-works">It also works...</h1>
+<pre class="hljs"><code  class="lang-html" data-source="foo/bar.html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>It works.<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+<span class="deleted"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>DELETE<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+
+<span class="inserted"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/App.svelte&#x27;</span>;
+
+<span class="hljs-keyword">new</span> <span class="hljs-title class_">App</span>({ <span class="hljs-comment">// eslint-disable-line</span>
+  <span class="hljs-attr">target</span>: <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#app&#x27;</span>),
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>OK<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+</code></pre>
 
   </body>
 </html>

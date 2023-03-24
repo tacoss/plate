@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta name="package" content="plate v0.0.0">
-    <meta name="revision" content="daa3721">
+    <meta name="revision" content="14e3bb6">
     <base href="/plate/">
     <meta lang="en">
     <meta charset="utf-8">
@@ -14,11 +14,26 @@
     <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
     <meta name="description" content="Old boilerplate for web-pages!">
     <meta property="og:description" content="Old boilerplate for web-pages!">
-    <link rel="stylesheet" href="images.css?t=daa3721">
-<link rel="stylesheet" href="styles.css?t=daa3721">
-<link rel="stylesheet" href="emojis.css?t=daa3721">
+    <link rel="stylesheet" href="images.css?t=14e3bb6">
+<link rel="stylesheet" href="styles.css?t=14e3bb6">
+<link rel="stylesheet" href="emojis.css?t=14e3bb6">
 
     <title>Administration</title>
+    <link rel="stylesheet" href="//unpkg.com/highlight.js/styles/github.css">
+    <style>
+      .inserted { background-color: #e6ffec; }
+      .deleted { background-color: #ffebe9; }
+      pre {
+        outline: 1px dashed gray;
+        padding: .5em;
+      }
+      pre > code[data-source]::before {
+        content: attr(data-source);
+        float: right;
+        display: block;
+        opacity: .5;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -28,7 +43,7 @@
       <a aria-current="page" href="./admin">Admin</a>
     </nav>
     <div id="app"></div>
-    <script type="module" src="app.js?t=daa3721"></script>
+    <script type="module" src="app.js?t=14e3bb6"></script>
 
   </body>
 </html>
