@@ -6,11 +6,11 @@ i[class^="icon-emojis-"], i[class*=" icon-emojis-"] {
   background-size: 48px 98px;
 }
 
-i.icon-emojis-bomb {
+i.icon-emojis-pkg {
   width: 48px; height: 48px;
   background-position: -0px -0px;
 }
-i.icon-emojis-pkg {
+i.icon-emojis-bomb {
   width: 48px; height: 48px;
   background-position: -0px -50px;
 }
